@@ -13,7 +13,7 @@
 #define U_MS_L &mmv MOVE_LEFT
 #define U_MS_R &mmv MOVE_RIGHT
 
-init commit to test
+// init commit to test
 / {
     behaviors {
         td0: td0 {

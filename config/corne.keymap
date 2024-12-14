@@ -417,7 +417,7 @@ ZMK_TRI_STATE(sw_app_st,
     &trans     &tmux_p Z  &tmux_p X       &tmux_p C      &tmux_p D        &tmux_p V          &mmv MOVE_LEFT      &tmux_p K    &tmux_p H    &tmux_p COMMA &tmux_p DOT &tmux_p SLASH   &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
-                         &trans &hml_ttl _NAV _PREFIX_C_K &hml_ttl _NAV _PREFIX_C &trans     &mmv MOVE_RIGHT     &trans       &trans       &trans 
+                         &trans &hml_ttl _NAV _PREFIX_C_K &hml_ttl _NAV _PREFIX_C_K &trans     &mmv MOVE_RIGHT     &trans       &trans       &trans 
 //                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
 //                                                                                           46
                                                                                              &mkp LCLK 

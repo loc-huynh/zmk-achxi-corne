@@ -2,15 +2,34 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
+// #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+#include <input/processors.dtsi>
 #include "zmk-helpers/helper.h"
 
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
+// #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
+// #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
+//
+
+#include <dt-bindings/zmk/pointing.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+
+/ {
+    input_processors {
+        zip_wheel_scaler: zip_wheel_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL>;
+            track-remainders;
+        };
+    };
+}
+
 #define U_MS_U &mmv MOVE_UP
 #define U_MS_D &mmv MOVE_DOWN
 #define U_MS_L &mmv MOVE_LEFT
@@ -26,11 +45,14 @@
 #define _PREFIX_C_K 6
 #define _MOUSE 7
 #define _MOUSE_REV 8
-#define _NAV 9
-#define _EXTEND 10
-#define _VIM 11
-#define _SUB_NAV 12
-#define _HRM 13
+#define _MOUSE_FAST 9
+#define _MOUSE_NORM 10
+#define _MOUSE_SLOW 11
+#define _NAV 12
+#define _EXTEND 13
+#define _VIM 14
+#define _SUB_NAV 15
+#define _HRM 16
 // #define _TAB 13
 
 // Meh key
@@ -142,13 +164,13 @@ ZMK_TRI_STATE(alt_tab,
 ZMK_TRI_STATE(sw_web_st,
     bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
     ignored-key-positions = <1 42 44 40 9>; // LS(TAB) on _NAV layer, LG(Q) to exit app on _NAV layer, _NAV/esc layer key 
-    ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13>;
+    ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16>;
 )
 
 ZMK_TRI_STATE(sw_app_st,
     bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
     ignored-key-positions = <1 42 44 40 9>; // LS(TAB) on _NAV layer, LG(Q) to exit app on _NAV layer 
-    ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13>;
+    ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16>;
 )
 
 / {
@@ -443,13 +465,13 @@ ZMK_TRI_STATE(sw_app_st,
     &none  &to _COLEMAK_DH &kp C_STOP     &msc SCRL_DOWN  &msc SCRL_UP    &kp C_MUTE         &kp UP_ARROW        &kp C_PP     &msc SCRL_LEFT &mmv MOVE_UP &msc SCRL_RIGHT &kp CAP_IMG     &none
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
-    &trans     &kp C_NEXT  &mkp MB5        &mkp MCLK       &mkp MB4        &kp C_VOL_DN      &kp DOWN_ARROW    &kp C_VOL_UP  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp ZOOM_MAC    &trans 
+    &trans     &kp C_NEXT  &mo _MOUSE_NORM &mo _MOUSE_SLOW &mo _MOUSE_FAST &kp C_VOL_DN      &kp DOWN_ARROW    &kp C_VOL_UP  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp ZOOM_MAC    &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans    &kp C_PREV     &kp C_PP       &mkp RCLK     &mkp LCLK        &kp C_BRI_DN      &kp LEFT_ARROW      &kp C_BRI_UP  &mkp LCLK    &mkp RCLK    &tog _MOUSE_REV &none     &trans 
+    &trans    &kp C_PREV     &kp C_PP       &mkp RCLK     &mkp LCLK        &kp C_BRI_DN      &kp LEFT_ARROW      &kp C_BRI_UP  &mkp LCLK    &mkp RCLK &mkp MCLK   &tog _MOUSE_REV      &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
-                            &trans &hml_ttl _NAV _MOUSE &hml_ttl _NAV _MOUSE &mo _HRM        &kp RIGHT_ARROW      &mkp RCLK    &mkp LCLK   &trans 
+                            &trans &hml_ttl _NAV _MOUSE &hml_ttl _NAV _MOUSE &mo _HRM        &kp RIGHT_ARROW      &mkp MB5     &mkp MB4    &mkp MCLK
 //                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
 //                                                                                           46
                                                                                              &kp ENTER
@@ -477,13 +499,13 @@ ZMK_TRI_STATE(sw_app_st,
     &none     &kp CAP_IMG  &msc SCRL_LEFT   &mmv MOVE_UP   &msc SCRL_RIGHT &kp C_PP          &kp UP_ARROW       &kp C_MUTE   &msc SCRL_DOWN  &msc SCRL_UP &kp C_STOP &to _COLEMAK_DH &none
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
-    &trans    &kp ZOOM_MAC  &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp C_VOL_DN      &kp DOWN_ARROW     &kp C_VOL_UP  &mkp MB4     &mkp MCLK     &mkp MB5    &kp C_PREV    &trans 
+    &trans    &kp ZOOM_MAC  &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp C_VOL_DN      &kp DOWN_ARROW     &kp C_VOL_UP  &mo _MOUSE_FAST &mo _MOUSE_SLOW &mo _MOUSE_NORM &kp C_PREV    &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans      &none     &kp C_PP        &mkp RCLK       &mkp LCLK        &kp C_BRI_DN      &kp LEFT_ARROW      &kp C_BRI_UP &mkp LCLK     &mkp RCLK    &tog _MOUSE_REV &kp C_NEXT &trans 
+    &trans      &kp C_PP  &mkp MCLK       &mkp RCLK       &mkp LCLK        &kp C_BRI_DN      &kp LEFT_ARROW      &kp C_BRI_UP &mkp LCLK     &mkp RCLK    &kp C_NEXT &tog _MOUSE_REV &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
-                          &trans          &m_thing _NAV 0 &m_thing _NAV 0 &mo _HRM           &kp RIGHT_ARROW      &mkp RCLK    &mkp LCLK   &trans 
+                          &trans          &m_thing _NAV 0 &m_thing _NAV 0 &mo _HRM           &kp RIGHT_ARROW      &mkp MB5     &mkp MB4    &mkp MCLK 
 //                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
 //                                                                                           46
                                                                                              &kp ENTER
@@ -501,6 +523,84 @@ ZMK_TRI_STATE(sw_app_st,
 //     TG_BPC_POWER,   QK_LOCK,   JIGGLE ,VIM_MOVE, FAT_RIGHT, _______, _______, BACK,   KC_BSPC,   DEL_WORD,  F_LINE,     WORD_L,
 //     _______,  _______,  _______,   _______, _______,      _______,  _______, KC_LSFT,   MO(_HOME_ROW_MOD),   _______,  _______,    _______
 // ),
+
+        mouse_fast_layer {
+            display-name = "ms fast";
+            bindings = <
+// ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
+// │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
+    &none       &trans    &trans          &trans          &trans          &trans             &kp UP_ARROW        &trans       &trans       &trans       &trans        &trans       &none
+// ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
+// │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
+    &trans      &trans    &trans          &trans          &trans          &trans             &kp DOWN_ARROW      &trans       &trans       &trans       &trans        &trans       &trans
+// ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
+// │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
+    &trans      &trans    &trans          &trans          &trans          &trans             &kp LEFT_ARROW      &trans       &trans       &trans       &trans        &trans       &trans
+// ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
+//                                       │39             │40             │41             │   42                 │43          │44          │45          │
+                          &trans          &trans          &trans          &trans             &kp RIGHT_ARROW      &trans      &trans       &trans
+//                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
+//                                                                                           46
+                                                                                             &kp ENTER
+//                                                                                          ╰───────────────╯
+                                                                                                                                                                                        │
+            >;                                                                                                                                                                          │
+                                                                                                                                                                                        │
+            label = "ms fast";                                                                                                                                                       │
+            sensor-bindings = <&scroll_encoder>;                                                                                                                                        │
+        };                                                                                                                                                                              │
+
+        mouse_norm_layer {
+            display-name = "ms norm";
+            bindings = <
+// ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
+// │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
+    &none       &trans    &trans          &trans          &trans          &trans             &kp UP_ARROW        &trans       &trans       &trans       &trans        &trans       &none
+// ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
+// │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
+    &trans      &trans    &trans          &trans          &trans          &trans             &kp DOWN_ARROW      &trans       &trans       &trans       &trans        &trans       &trans
+// ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
+// │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
+    &trans      &trans    &trans          &trans          &trans          &trans             &kp LEFT_ARROW      &trans       &trans       &trans       &trans        &trans       &trans
+// ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
+//                                       │39             │40             │41             │   42                 │43          │44          │45          │
+                          &trans          &trans          &trans          &trans             &kp RIGHT_ARROW      &trans      &trans       &trans
+//                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
+//                                                                                           46
+                                                                                             &kp ENTER
+//                                                                                          ╰───────────────╯
+                                                                                                                                                                                        │
+            >;                                                                                                                                                                          │
+                                                                                                                                                                                        │
+            label = "ms norm";                                                                                                                                                       │
+            sensor-bindings = <&scroll_encoder>;                                                                                                                                        │
+        };                                                                                                                                                                              │
+
+        mouse_slow_layer {
+            display-name = "ms slow";
+            bindings = <
+// ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
+// │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
+    &none       &trans    &trans          &trans          &trans          &trans             &kp UP_ARROW        &trans       &trans       &trans       &trans        &trans       &none
+// ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
+// │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
+    &trans      &trans    &trans          &trans          &trans          &trans             &kp DOWN_ARROW      &trans       &trans       &trans       &trans        &trans       &trans
+// ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
+// │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
+    &trans      &trans    &trans          &trans          &trans          &trans             &kp LEFT_ARROW      &trans       &trans       &trans       &trans        &trans       &trans
+// ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
+//                                       │39             │40             │41             │   42                 │43          │44          │45          │
+                          &trans          &trans          &trans          &trans             &kp RIGHT_ARROW      &trans      &trans       &trans
+//                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
+//                                                                                           46
+                                                                                             &kp ENTER
+//                                                                                          ╰───────────────╯
+                                                                                                                                                                                        │
+            >;                                                                                                                                                                          │
+                                                                                                                                                                                        │
+            label = "ms slow";                                                                                                                                                       │
+            sensor-bindings = <&scroll_encoder>;                                                                                                                                        │
+        };                                                                                                                                                                              │
 
         nav_layer {
             display-name = "nav";

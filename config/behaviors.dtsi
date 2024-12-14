@@ -48,15 +48,41 @@
     };
 
     mmv {
-        acceleration-exponent = <1>;      // 1
+        acceleration-exponent = <2>;      // 1
         time-to-max-speed-ms = <900>;    // 40
-        delay-ms = <0>;                   // 0
+        // delay-ms = <0>;                   // 0
+        
+        fast {
+          layers = <_MOUSE_FAST>;
+          input-processors = <&zip_xy_scaler 4 1>;
+        };
+        norm {
+          layers = <_MOUSE_NORM>;
+          input-processors = <&zip_xy_scaler 2 1>;
+        };
+        slow {
+          layers = <_MOUSE_SLOW>;
+          input-processors = <&zip_xy_scaler 1 4>;
+        };
     };
 
     msc {
-        acceleration-exponent = <1>;      // 0
-        time-to-max-speed-ms = <400>;      // 500
-        delay-ms = <0>;                   // 10
+        acceleration-exponent = <2>;      // 0                                                                                                                                          ▐
+        time-to-max-speed-ms = <500>;      // 500                                                                                                                                       ▐
+        // delay-ms = <0>;                   // 10                                                                                                                                      ▐
+                                                                                                                                                                                                  ▐
+        fast {                                                                                                                                                                          ▐
+            layers = <_MOUSE_FAST>;
+            input-processors = <&zip_wheel_scaler 4 1>;
+        };
+        norm {
+            layers = <_MOUSE_NORM>;
+            input-processors = <&zip_wheel_scaler 2 1>;
+        };
+        slow {
+            layers = <_MOUSE_SLOW>;
+            input-processors = <&zip_wheel_scaler 1 4>;
+        };
     };
 
     /omit-if-no-ref/ skq: sticky_key_quick_release {

@@ -239,8 +239,8 @@
         #binding-cells = <2>;
         flavor = "tap-preferred";
         tapping-term-ms = <150>;
-        quick-tap-ms = <125>;
-        require-prior-idle-ms = <100>;
+        quick-tap-ms = <150>;
+        require-prior-idle-ms = <125>;
         bindings = <&mo>, <&kp>;
     };
 
@@ -513,7 +513,7 @@
     /omit-if-no-ref/ hl_tl: hold_layer_taphold_layer {
 
         compatible = "zmk,behavior-tap-dance";
-        tapping-term-ms = <150>;
+        tapping-term-ms = <200>;
         bindings = <&hlo _HRM 0>, <&hlo _SYM 0>;
         #binding-cells = <0>;
     };

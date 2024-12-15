@@ -67,11 +67,11 @@
     };
 
     msc {
-        acceleration-exponent = <1>;      // 0                                                                                                                                          ▐
-        time-to-max-speed-ms = <500>;      // 500                                                                                                                                       ▐
-        delay-ms = <0>;                   // 10                                                                                                                                      ▐
+        acceleration-exponent = <1>;      // 0
+        time-to-max-speed-ms = <500>;      // 500
+        delay-ms = <0>;                   // 10
                                                                                                                                                                                                   ▐
-        fast {                                                                                                                                                                          ▐
+        fast {
             layers = <_MOUSE_FAST>;
             input-processors = <&zip_wheel_scaler 2 1>;
         };

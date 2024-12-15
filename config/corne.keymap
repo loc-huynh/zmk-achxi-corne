@@ -162,13 +162,13 @@ ZMK_TRI_STATE(alt_tab,
 
 ZMK_TRI_STATE(sw_web_st,
     bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
-    ignored-key-positions = <1 42 44 40 9>; // LS(TAB) on _NAV layer, LG(Q) to exit app on _NAV layer, _NAV/esc layer key 
+    ignored-key-positions = <1 42 44 40 9 41>; // LS(TAB) on _NAV layer, LG(Q) to exit app on _NAV layer, _NAV/esc layer key 
     ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16>;
 )
 
 ZMK_TRI_STATE(sw_app_st,
     bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-    ignored-key-positions = <1 42 44 40 9>; // LS(TAB) on _NAV layer, LG(Q) to exit app on _NAV layer 
+    ignored-key-positions = <1 42 44 40 9 41>; // LS(TAB) on _NAV layer, LG(Q) to exit app on _NAV layer 
     ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16>;
 )
 

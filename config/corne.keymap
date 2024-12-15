@@ -539,12 +539,12 @@ ZMK_TRI_STATE(sw_app_st,
 //                                                                                           46
                                                                                              &kp ENTER
 //                                                                                          ╰───────────────╯
-                                                                                                                                                                                        │
-            >;                                                                                                                                                                          │
-                                                                                                                                                                                        │
-            label = "ms fast";                                                                                                                                                       │
-            sensor-bindings = <&scroll_encoder>;                                                                                                                                        │
-        };                                                                                                                                                                              │
+
+            >;
+
+            label = "ms fast";
+            sensor-bindings = <&scroll_encoder>;
+        };
 
         mouse_norm_layer {
             display-name = "ms norm";
@@ -564,13 +564,13 @@ ZMK_TRI_STATE(sw_app_st,
 //                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
 //                                                                                           46
                                                                                              &kp ENTER
-//                                                                                          ╰───────────────╯
-                                                                                                                                                                                        │
-            >;                                                                                                                                                                          │
-                                                                                                                                                                                        │
-            label = "ms norm";                                                                                                                                                       │
-            sensor-bindings = <&scroll_encoder>;                                                                                                                                        │
-        };                                                                                                                                                                              │
+//
+ 
+            >;
+
+            label = "ms norm";
+            sensor-bindings = <&scroll_encoder>;
+        };
 
         mouse_slow_layer {
             display-name = "ms slow";
@@ -591,12 +591,12 @@ ZMK_TRI_STATE(sw_app_st,
 //                                                                                           46
                                                                                              &kp ENTER
 //                                                                                          ╰───────────────╯
-                                                                                                                                                                                        │
-            >;                                                                                                                                                                          │
-                                                                                                                                                                                        │
-            label = "ms slow";                                                                                                                                                       │
-            sensor-bindings = <&scroll_encoder>;                                                                                                                                        │
-        };                                                                                                                                                                              │
+
+            >;
+
+            label = "ms slow";
+            sensor-bindings = <&scroll_encoder>;
+        };
 
         nav_layer {
             display-name = "nav";

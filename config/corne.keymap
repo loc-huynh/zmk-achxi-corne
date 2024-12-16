@@ -336,7 +336,7 @@ ZMK_TRI_STATE(sw_app_st,
             bindings = <
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &none &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &none               &mmv MOVE_UP        &none        &bt BT_PRV &bt BT_NXT   &bt BT_CLR &bt BT_CLR_ALL       &none 
+    &none &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &out OUT_USB       &mmv MOVE_UP        &out OUT_BLE &bt BT_PRV &bt BT_NXT   &bt BT_CLR &bt BT_CLR_ALL       &none 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
     &trans &rgb_ug RGB_EFF &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_ON &rgb_ug RGB_OFF    &mmv MOVE_DOWN      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &trans
@@ -616,7 +616,7 @@ ZMK_TRI_STATE(sw_app_st,
     &trans  &hrml LCTRL C_UNDO &hrml LSHIFT C_CUT &hrml_cy LALT C_COPY &hrml LCMD PASTE &hrml MEH SEARCH  &mmv MOVE_DOWN      &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT     &kp DWORD    &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans &tog _PREFIX_C_K &code_snip &hl_togl _LED _LED &mo _VIM        &fat_right         &mmv MOVE_LEFT     &web_nav     &bkspc_del    &kp DEL_WORD  &htk F_LINE_SEL F_LINE &kp WORD_L   &trans 
+    &trans &tog _PREFIX_C_K &code_snip &hl_togl _LED _LED   &fat_right        &mo _VIM       &mmv MOVE_LEFT     &web_nav     &bkspc_del    &kp DEL_WORD  &htk F_LINE_SEL F_LINE &kp WORD_L   &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
                           &trans          &trans          &trans          &trans             &mmv MOVE_RIGHT     &smart_shift &kp LS(TAB)     &trans 
@@ -701,7 +701,7 @@ ZMK_TRI_STATE(sw_app_st,
     &trans        &none     &none          &none           &kp LSHIFT      &none            &mmv MOVE_DOWN    &kp PSCRN &hmtk 0 TER_DEL &ter_line     &ter_word     &kp SLCK     &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans       &none     &none           &none           &none           &thin_right        &mmv MOVE_LEFT      &kp FWD      &htk TER_C_F TER_C_E &del_fw &htk L_LINE_SEL L_LINE &kp WORD_R &trans 
+    &trans       &none     &none           &none           &thin_right     &none             &mmv MOVE_LEFT      &kp FWD      &htk TER_C_F TER_C_E &del_fw &htk L_LINE_SEL L_LINE &kp WORD_R &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
                           &trans          &trans          &trans          &trans             &mmv MOVE_RIGHT     &kp CAP_FULL_IMG &kp CAP_MOV &kp PAUSE_BREAK 

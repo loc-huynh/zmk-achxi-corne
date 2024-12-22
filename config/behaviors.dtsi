@@ -314,13 +314,21 @@
       #binding-cells = <2>;
     };
 
-    /omit-if-no-ref/ hmtk: hold_macro_tap_key {
-        compatible = "zmk,behavior-hold-tap";
-        // label = "HOLD_MACRO_TAP_KEY";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <150>;
-        bindings = <&ter_del_fw>, <&kp>;
+    // replace by below using `shift` to delete terminal word backward/forward
+    // /omit-if-no-ref/ hmtk: hold_macro_tap_key {
+    //     compatible = "zmk,behavior-hold-tap";
+    //     // label = "HOLD_MACRO_TAP_KEY";
+    //     #binding-cells = <2>;
+    //     flavor = "tap-preferred";
+    //     tapping-term-ms = <150>;
+    //     bindings = <&ter_del_fw>, <&kp>;
+    // };
+
+    /omit-if-no-ref/ twd: terminal_word_delete {
+      compatible = "zmk,behavior-mod-morph";
+      bindings = <&kp TER_DEL>, <&ter_del_fw>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+      #binding-cells = <0>;
     };
 
     /omit-if-no-ref/ hlsl: hold_layer_sticky_layer {

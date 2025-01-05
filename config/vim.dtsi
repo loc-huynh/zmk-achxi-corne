@@ -272,15 +272,6 @@
     };
 
     // vim VISUAL mode
-    /omit-if-no-ref/ off_vv: off_vim_visual {
-      wait-ms = <0>;
-      tap-ms = <0>;
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &tog _VIM_VISUAL>;
-    };
-
-
     /omit-if-no-ref/ vim_a: vim_a {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
@@ -468,7 +459,7 @@
         <&macro_tap &tog _VIM_VISUAL>;
     };
 
-    /omit-if-no-ref/ off_vim_visual: off_vim_visual {
+    /omit-if-no-ref/ off_vv: off_vim_visual {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings 
@@ -950,15 +941,6 @@
     };
 
     /omit-if-no-ref/ vim_v_visual_win: vim_v_visual_win {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings 
-      = <&macro_tap &kp LEFT>,
-        <&macro_tap &kp RIGHT>,
-        <&macro_tap &tog _VIM_VISUAL_WIN>;
-    };
-
-    /omit-if-no-ref/ off_vim_visual_win: off_vim_visual_win {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings 

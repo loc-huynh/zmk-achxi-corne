@@ -501,7 +501,7 @@ ZMK_TRI_STATE(sw_app_st,
     &trans      &none     &vim_x_visual  &vim_c_visual &vim_d_visual   &vim_v_visual        &mmv MOVE_LEFT      &kp LS(UP)   &kp LS(LEFT) &kp LS(PG_DN) &kp LS(PG_UP)  &none       &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
-                          &kp C_MUTE       &trans         &off_vim_visual &trans             &mmv MOVE_RIGHT     &trans       &trans       &trans 
+                          &kp C_MUTE       &trans         &off_vv         &trans             &mmv MOVE_RIGHT     &trans       &trans       &trans 
 //                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
 //                                                                                           46
                                                                                              &mkp LCLK 
@@ -676,7 +676,7 @@ ZMK_TRI_STATE(sw_app_st,
     &trans      &none &vim_x_visual_win &vim_c_visual_win &vim_d_visual_win &vim_v_visual_win &mmv MOVE_LEFT      &kp LS(UP)   &kp LS(LEFT) &kp LS(PG_DN) &kp LS(PG_UP)  &none       &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
-                          &kp C_MUTE       &trans     &off_vim_visual_win &trans             &mmv MOVE_RIGHT     &trans       &trans       &trans 
+                          &kp C_MUTE       &trans        &off_vv_win      &trans             &mmv MOVE_RIGHT     &trans       &trans       &trans 
 //                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
 //                                                                                           46
                                                                                              &mkp LCLK 

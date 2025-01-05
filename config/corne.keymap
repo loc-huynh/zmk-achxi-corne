@@ -385,7 +385,7 @@ ZMK_TRI_STATE(sw_app_st,
 
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &trans      &to COLEMAK_DH &vim_w     &none           &vim_p          &kp WORD_L         &mmv MOVE_UP        &kp DOWN       &kp RIGHT &kp C_UNDO   &vim_copy     &none        &trans 
+    &trans      &to _COLEMAK_DH &vim_w     &none           &vim_p          &kp WORD_L         &mmv MOVE_UP        &kp DOWN       &kp RIGHT &kp C_UNDO   &vim_copy     &none        &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
     &trans     &vim_a     &vim_r          &kp F_LINE      &kp L_LINE     &vim_go             &mmv MOVE_DOWN      &none        &kp WORD_L  &kp WORD_R   &vim_i        &vim_o        &trans 
@@ -510,7 +510,7 @@ ZMK_TRI_STATE(sw_app_st,
 
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &trans      &to COLEMAK_DH &vim_w_win  &none          &vim_p_win     &kp WORD_L_WIN      &mmv MOVE_UP        &kp DOWN       &kp RIGHT &kp C_UNDO_WIN &vim_copy_win  &none      &trans 
+    &trans      &to _COLEMAK_DH &vim_w_win  &none          &vim_p_win     &kp WORD_L_WIN      &mmv MOVE_UP        &kp DOWN       &kp RIGHT &kp C_UNDO_WIN &vim_copy_win  &none      &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
     &trans     &vim_a_win &vim_r_win     &kp F_LINE_WIN   &kp L_LINE_WIN  &vim_go_win        &mmv MOVE_DOWN      &none       &kp WORD_L_WIN &kp WORD_R_WIN &vim_i_win &vim_o_win    &trans 

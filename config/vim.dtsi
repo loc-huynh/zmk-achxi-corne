@@ -671,7 +671,7 @@
     };
 
     // vim YANK mode
-    /omit-if-no-ref/ vim_y_rword: vim_y_right_word {
+    /omit-if-no-ref/ vim_y_rword_win: vim_y_rword_win {
       wait-ms = <0>;
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";

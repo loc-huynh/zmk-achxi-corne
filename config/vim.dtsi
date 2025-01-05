@@ -178,7 +178,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp F_LINE>,
-        <&macro_tap &kp L_LINE_SEL>;
+        <&macro_tap &kp L_LINE_SEL>,
         <&macro_tap &kp BSPC>;
     };
 
@@ -197,7 +197,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp WORD_R_SEL>,
-        <&macro_tap &kp C_COPY>;
+        <&macro_tap &kp C_COPY>,
         <&macro_tap &kp LEFT>;
     };
 

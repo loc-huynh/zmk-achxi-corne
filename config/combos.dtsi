@@ -46,9 +46,11 @@
     // COMBO(leader_key, &kp OPEN_APP, 2 3 4, -1, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
     COMBO_G(toggle_sym_layer, &tog _SYM, 8 9 10, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
     COMBO_G(toggle_num_layer, &tog _NUM, 2 3 4, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
-    COMBO_G(toggle_num_layer_dup, &tog _NUM, 34 35, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
     COMBO_G(ctrl_w, &ctrl_w, 28 30, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
     COMBO_G(double_quote, &kp DQT, 2 3, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
+
+    COMBO_G(vim_motion, &tog _VIM_NORMAL, 8 9, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
+    COMBO_G(vim_motion_win, &tog _VIM_NORMAL_WIN, 34 35, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
 
     /* Bluetooth */
     COMBO(bt_clear, &bt BT_CLR, 2 3 4 5, _EXTEND, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)

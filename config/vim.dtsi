@@ -904,7 +904,7 @@
     /omit-if-no-ref/ vim_visual_win: vim_visual_win {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-        <&macro_tap &tog _VIM_VISUAL_WIN>;
+      bindings = <&macro_tap &tog _VIM_VISUAL_WIN>;
     };
 
     /omit-if-no-ref/ vim_y_visual_win: vim_y_visual_win {

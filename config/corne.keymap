@@ -30,29 +30,35 @@
 
 #define _VIM_NORMAL 4
 #define _VIM_PENDING 5
-#define _VIM_CAPS 6
-#define _VIM_VISUAL 7
-#define _VIM_VLINE 8
+#define _VIM_CHANGE 6
+#define _VIM_DELETE 7
+#define _VIM_YANK 8
+#define _VIM_VISUAL 9
+#define _VIM_CAPS 10
+#define _VIM_VLINE 11
 
-#define _VIM_NORMAL_WIN 9
-#define _VIM_PENDING_WIN 10
-#define _VIM_CAPS_WIN 11
-#define _VIM_VISUAL_WIN 12
-#define _VIM_VLINE_WIN 13
+#define _VIM_NORMAL_WIN 12
+#define _VIM_PENDING_WIN 13
+#define _VIM_CHANGE_WIN 14
+#define _VIM_DELETE_WIN 15
+#define _VIM_YANK_WIN 16
+#define _VIM_VISUAL_WIN 17
+#define _VIM_CAPS_WIN 18
+#define _VIM_VLINE_WIN 19
 
-#define _NUM 14
-#define _SYM 15
-#define _PREFIX_C_K 16
-#define _MOUSE 17
-#define _MOUSE_REV 18
-#define _MOUSE_FAST 19
-#define _MOUSE_NORM 20
-#define _MOUSE_SLOW 21
-#define _NAV 22
-#define _EXTEND 23
-#define _VIM 24
-#define _SUB_NAV 25
-#define _HRM 26
+#define _NUM 20
+#define _SYM 21
+#define _PREFIX_C_K 22
+#define _MOUSE 23
+#define _MOUSE_REV 24
+#define _MOUSE_FAST 25
+#define _MOUSE_NORM 26
+#define _MOUSE_SLOW 27
+#define _NAV 28
+#define _EXTEND 29
+#define _VIM 30
+#define _SUB_NAV 31
+#define _HRM 32
 // #define _TAB 13
 
 // Meh key
@@ -168,19 +174,19 @@ ZMK_TRI_STATE(alt_tab,
 ZMK_TRI_STATE(alt_tab_st,
   bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
   ignored-key-positions = <1 45 3>; // alt-tab itself  on _EXTEND layer, LS(TAB) on _EXTEND layer, _EXTEND layer key 
-  ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26>;
+  ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32>;
 )
 
 ZMK_TRI_STATE(sw_web_st,
     bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
     ignored-key-positions = <1 42 45 40 9 41>; // LS(TAB) on _NAV layer, LG(Q) to exit app on _NAV layer, _NAV/esc layer key 
-    ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26>;
+    ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32>;
 )
 
 ZMK_TRI_STATE(sw_app_st,
     bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
     ignored-key-positions = <1 42 45 40 9 41>; // LS(TAB) on _NAV layer, LG(Q) to exit app on _NAV layer 
-    ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26>;
+    ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32>;
 )
 
 / {
@@ -386,13 +392,13 @@ ZMK_TRI_STATE(sw_app_st,
 
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &trans      &to _COLEMAK_DH &vim_w     &none           &vim_p          &kp WORD_L         &mmv MOVE_UP        &kp DOWN       &kp RIGHT &kp C_UNDO   &vim_copy     &none        &trans 
+    &trans      &tog VIM_NORMAL &kp WORD_R &none          &vim_p          &kp WORD_L         &mmv MOVE_UP        &kp DOWN       &kp RIGHT &kp C_UNDO   &tog _VIM_YANK &none        &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
-    &trans     &vim_a     &vim_r          &kp F_LINE      &kp L_LINE     &vim_go             &mmv MOVE_DOWN      &none        &kp WORD_L  &kp WORD_R   &vim_i        &vim_o        &trans 
+    &trans     &vim_a     &vim_r          &kp F_LINE      &kp L_LINE     &htk V_TOP V_BOT    &mmv MOVE_DOWN      &none        &kp WORD_L  &kp WORD_R   &vim_i        &vim_o        &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans      &none     &vim_x           &vim_change      &vim_del      &vim_visual        &mmv MOVE_LEFT      &kp UP        &kp LEFT    &kp PG_DN    &kp PG_UP     &kp SEARCH   &trans 
+    &trans      &none     &vim_x        &tog _VIM_CHANGE &tog _VIM_DELETE &vim_visual        &mmv MOVE_LEFT      &kp UP        &kp LEFT    &kp PG_DN    &kp PG_UP     &kp SEARCH   &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
                           &kp C_MUTE       &trans         &tog _VIM_NORMAL &hlt _NAV SPACE   &mmv MOVE_RIGHT     &mo _VIM_CAPS &nslt _SYM TAB &trans
@@ -405,28 +411,78 @@ ZMK_TRI_STATE(sw_app_st,
            sensor-bindings = <&scroll_encoder>; 
         };
 
-        vim_pending_layer {
-            display-name = "vPEND";
+        vim_change_layer {
+            display-name = "vCGE";
             bindings = <
 
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &trans      &none     &kp WORD_R_SEL  &none           &none           &kp WORD_L_SEL     &mmv MOVE_UP        &trans      &trans       &none        &vim_line_sel  &none       &trans 
+    &trans     &off_vc    &vim_c_rword    &off_vc         &off_vc        &vim_c_lword        &mmv MOVE_UP        &off_vc      &off_vc      &off_vc      &off_vc       &off_vc      &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
-    &trans     &vim_a     &none           &kp F_LINE_SEL  &kp L_LINE_SEL  &kp V_TOP          &mmv MOVE_DOWN      &none        &kp WORD_L_SEL &kp WORD_R_SEL &none    &none         &trans 
+    &trans      &off_vc   &off_vc         &vim_c_lline  &vim_c_rline      &vim_c_top         &mmv MOVE_DOWN      &vim_c_bot   &vim_c_lword &vim_c_rword &off_vc       &off_vc      &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans      &none     &none           &vim_line_sel   &vim_line_sel   &kp V              &mmv MOVE_LEFT      &trans       &trans       &none        &none         &none        &trans 
+    &trans      &off_vc   &off_vc         &vim_c_line     &off_vc         &off_vc            &mmv MOVE_LEFT      &off_vc      &off_vc      &off_vc      &off_vc       &off_vc      &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
-                          &kp C_MUTE       &trans         &tog _VIM_PENDING  &trans          &mmv MOVE_RIGHT     &trans        &trans       &trans 
+                          &kp C_MUTE       &trans         &off_vc         &trans             &mmv MOVE_RIGHT     &trans       &trans       &trans 
 //                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
 //                                                                                           46
                                                                                              &mkp LCLK 
 //                                                                                          ╰───────────────╯
             >;
-           label = "vim pending";
+           label = "vim change";
+           sensor-bindings = <&scroll_encoder>; 
+        };
+
+        vim_del_layer {
+            display-name = "vDEL";
+            bindings = <
+
+// ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
+// │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
+    &trans      &off_vd   &vim_d_rword    &off_vd         &off_vd        &vim_d_lword        &mmv MOVE_UP        &off_vd      &off_vd      &off_vd      &off_vd       &off_vd      &trans 
+// ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
+// │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
+    &trans      &off_vd   &off_vd         &vim_d_lline  &vim_d_rline      &vim_d_top         &mmv MOVE_DOWN      &vim_d_bot   &vim_d_lword &vim_d_rword &off_vd       &off_vd      &trans 
+// ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
+// │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
+    &trans      &off_vd   &off_vd         &off_vd         &vim_d_line     &off_vd            &mmv MOVE_LEFT      &off_vd      &off_vd      &off_vd      &off_vd       &off_vd      &trans 
+// ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
+//                                       │39             │40             │41             │   42                 │43          │44          │45          │
+                          &kp C_MUTE       &trans         &off_vd         &trans             &mmv MOVE_RIGHT     &trans       &trans       &trans 
+//                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
+//                                                                                           46
+                                                                                             &mkp LCLK 
+//                                                                                          ╰───────────────╯
+            >;
+           label = "vim delete";
+           sensor-bindings = <&scroll_encoder>; 
+        };
+
+        vim_yank_layer {
+            display-name = "vYANK";
+            bindings = <
+
+// ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
+// │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
+    &trans      &off_vy   &vim_y_rword    &off_vy         &off_vy        &vim_y_lword        &mmv MOVE_UP        &off_vy      &off_vy      &off_vy      &vim_y_line   &off_vy      &trans 
+// ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
+// │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
+    &trans      &off_vy   &off_vy         &vim_y_lline  &vim_y_rline      &vim_y_top         &mmv MOVE_DOWN      &vim_y_bot   &vim_y_lword &vim_y_rword &off_vy       &off_vy      &trans 
+// ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
+// │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
+    &trans      &off_vy   &off_vy         &off_vy         &off_vy         &off_vy            &mmv MOVE_LEFT      &off_vy      &off_vy      &off_vy      &off_vy       &off_vy      &trans 
+// ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
+//                                       │39             │40             │41             │   42                 │43          │44          │45          │
+                          &kp C_MUTE       &trans         &off_vy         &trans             &mmv MOVE_RIGHT     &trans       &trans       &trans 
+//                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
+//                                                                                           46
+                                                                                             &mkp LCLK 
+//                                                                                          ╰───────────────╯
+            >;
+           label = "vim delete";
            sensor-bindings = <&scroll_encoder>; 
         };
 
@@ -436,13 +492,13 @@ ZMK_TRI_STATE(sw_app_st,
 
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &trans      &trans     &trans         &trans           &trans         &trans             &mmv MOVE_UP        &kp LS(DOWN) &kp LS(RIGHT) &trans      &vim_y_visual  &trans      &trans 
+    &trans      &off_vv    &kp WORD_R_SEL &none           &none           &kp WORD_L_SEL     &mmv MOVE_UP        &kp LS(DOWN) &kp LS(RIGHT) &none      &vim_y_visual  &none        &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
-    &trans    &vim_a_caps &vim_r_caps &kp F_LINE_SEL  &kp L_LINE_SEL  &htk LS(V_TOP) LS(V_BOT) &mmv MOVE_DOWN    &trans       &trans       &trans       &trans        &trans       &trans 
+    &trans      &none     &none           &kp F_LINE_SEL  &kp L_LINE_SEL  &kp LS(V_TOP)      &mmv MOVE_DOWN      &kp LS(V_BOT) &kp WORD_L_SEL &kp WORD_R_SEL &none    &none        &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans      &trans     &vim_x_visual  &vim_c_visual &vim_d_visual   &vim_v_visual        &mmv MOVE_LEFT      &kp LS(UP)   &kp LS(LEFT) &kp LS(PG_DN) &kp LS(PG_UP)  &trans       &trans 
+    &trans      &none     &vim_x_visual  &vim_c_visual &vim_d_visual   &vim_v_visual        &mmv MOVE_LEFT      &kp LS(UP)   &kp LS(LEFT) &kp LS(PG_DN) &kp LS(PG_UP)  &none       &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
                           &kp C_MUTE       &trans         &off_vim_visual &trans             &mmv MOVE_RIGHT     &trans       &trans       &trans 
@@ -486,7 +542,7 @@ ZMK_TRI_STATE(sw_app_st,
 
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &trans      &none     &none           &none           &none           &none              &mmv MOVE_UP        &none        &none        &none        &vim_y_vline   &none       &trans 
+    &trans      &off_vim_vline &none      &none           &none           &none              &mmv MOVE_UP        &none        &none        &none        &vim_y_vline   &none       &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
     &trans    &none       &none           &none           &none     &htk LS(V_TOP) LS(V_BOT) &mmv MOVE_DOWN      &none        &none        &kp VLINE_DOWN &kp VLINE_UP   &none  &trans 
@@ -505,22 +561,22 @@ ZMK_TRI_STATE(sw_app_st,
            sensor-bindings = <&scroll_encoder>; 
         };
 
-        vim_normal_win_layer {
+        vim_win_normal_layer {
             display-name = "wNORM";
             bindings = <
 
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &trans      &to _COLEMAK_DH &vim_w_win  &none          &vim_p_win     &kp WORD_L_WIN      &mmv MOVE_UP        &kp DOWN       &kp RIGHT &kp C_UNDO_WIN &vim_copy_win  &none      &trans 
+    &trans &tog VIM_NORMAL_WIN &kp WORD_R_WIN &none     &vim_p_win        &kp WORD_L_WIN     &mmv MOVE_UP        &kp DOWN     &kp RIGHT   &kp C_UNDO_WIN &tog _VIM_YANK_WIN &none  &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
-    &trans     &vim_a_win &vim_r_win     &kp F_LINE_WIN   &kp L_LINE_WIN  &vim_go_win        &mmv MOVE_DOWN      &none       &kp WORD_L_WIN &kp WORD_R_WIN &vim_i_win &vim_o_win    &trans 
+    &trans &vim_a_win &vim_r_win &kp F_LINE_WIN  &kp L_LINE_WIN  &htk V_TOP_WIN V_BOT_WIN    &mmv MOVE_DOWN      &none      &kp WORD_L_WIN  &kp WORD_R_WIN &vim_i_win &vim_o_win   &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans      &none     &vim_x_win      &vim_change_win &vim_del_win    &vim_visual_win    &mmv MOVE_LEFT      &kp UP        &kp LEFT    &kp PG_DN    &kp PG_UP    &kp SEARCH_WIN &trans 
+    &trans      &none     &vim_x_win  &tog _VIM_CHANGE_WIN &tog _VIM_DELETE_WIN &vim_visual_win &mmv MOVE_LEFT   &kp UP        &kp LEFT    &kp PG_DN    &kp PG_UP     &kp SEARCH   &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
-                          &kp C_MUTE       &trans         &tog _VIM_NORMAL &hlt _NAV SPACE   &mmv MOVE_RIGHT     &mo _VIM_CAPS_WIN &nslt _SYM TAB &trans
+                          &kp C_MUTE       &trans      &tog _VIM_NORMAL_WIN &hlt _NAV SPACE   &mmv MOVE_RIGHT     &mo _VIM_CAPS &nslt _SYM TAB &trans
 //                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
 //                                                                                           46
                                                                                              &mkp LCLK 
@@ -530,47 +586,97 @@ ZMK_TRI_STATE(sw_app_st,
            sensor-bindings = <&scroll_encoder>; 
         };
 
-        vim_pending_win_layer {
-            display-name = "wPEND";
+        vim_win_change_layer {
+            display-name = "wCGE";
             bindings = <
 
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &trans      &none     &kp WORD_R_SEL_WIN  &none       &none         &kp WORD_L_SEL_WIN   &mmv MOVE_UP        &trans      &trans       &none        &vim_line_sel_win  &none       &trans 
+    &trans     &off_vc_win  &vim_c_rword    &off_vc_win    &off_vc_win     &vim_c_lword      &mmv MOVE_UP        &off_vc_win &off_vc_win   &off_vc_win &off_vc_win    &off_vc_win  &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
-    &trans     &vim_a_win &none         &kp F_LINE_SEL_WIN &kp L_LINE_SEL_WIN &kp V_TOP_WIN  &mmv MOVE_DOWN      &none     &kp WORD_L_SEL_WIN &kp WORD_R_SEL_WIN &none    &none         &trans 
+    &trans     &off_vc_win  &off_vc_win  &vim_c_lline_win &vim_c_rline_win &vim_c_top_win    &mmv MOVE_DOWN      &vim_c_bot_win &vim_c_lword_win &vim_c_rword_win &off_vc_win &off_vc_win &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans      &none     &none          &vim_line_sel_win   &vim_line_sel_win   &kp V       &mmv MOVE_LEFT      &trans       &trans       &none        &none         &none        &trans 
+    &trans     &off_vc_win  &off_vc_win  &vim_c_line_win  &off_vc_win     &off_vc_win        &mmv MOVE_LEFT      &off_vc_win  &off_vc_win  &off_vc_win  &off_vc_win  &off_vc_win   &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
-                          &kp C_MUTE       &trans     &tog _VIM_PENDING_WIN  &trans          &mmv MOVE_RIGHT     &trans        &trans       &trans 
+                          &kp C_MUTE       &trans         &off_vc_win         &trans             &mmv MOVE_RIGHT     &trans       &trans       &trans 
 //                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
 //                                                                                           46
                                                                                              &mkp LCLK 
 //                                                                                          ╰───────────────╯
             >;
-           label = "vim win pending";
+           label = "vim win change";
            sensor-bindings = <&scroll_encoder>; 
         };
 
-        vim_visual_win_layer {
+        vim_win_del_layer {
+            display-name = "wDEL";
+            bindings = <
+
+// ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
+// │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
+    &trans    &off_vd_win &vim_d_rword_win &off_vd_win    &off_vd_win    &vim_d_lword_win    &mmv MOVE_UP        &off_vd_win  &off_vd_win  &off_vd_win  &off_vd_win   &off_vd_win  &trans 
+// ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
+// │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
+    &trans    &off_vd_win &off_vd_win    &vim_d_lline_win  &vim_d_rline_win &vim_d_top       &mmv MOVE_DOWN      &vim_d_bot_win &vim_d_lword_win &vim_d_rword_win &off_vd_win &off_vd_win &trans 
+// ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
+// │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
+    &trans    &off_vd_win &off_vd_win     &off_vd_win     &vim_d_line_win &off_vd_win        &mmv MOVE_LEFT      &off_vd_win  &off_vd_win  &off_vd_win &off_vd_win    &off_vd_win      &trans 
+// ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
+//                                       │39             │40             │41             │   42                 │43          │44          │45          │
+                          &kp C_MUTE       &trans         &off_vd_win         &trans             &mmv MOVE_RIGHT     &trans       &trans       &trans 
+//                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
+//                                                                                           46
+                                                                                             &mkp LCLK 
+//                                                                                          ╰───────────────╯
+            >;
+           label = "vim win delete";
+           sensor-bindings = <&scroll_encoder>; 
+        };
+
+        vim_win_yank_layer {
+            display-name = "wYANK";
+            bindings = <
+
+// ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
+// │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
+    &trans    &off_vy_win &vim_y_rword_win &off_vy_win    &off_vy_win    &vim_y_lword_win    &mmv MOVE_UP       &off_vy_win   &off_vy_win &off_vy_win  &vim_y_line_win &off_vy_win &trans 
+// ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
+// │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
+    &trans    &off_vy_win &off_vy_win    &vim_y_lline_win &vim_y_rline_win &vim_y_top_win    &mmv MOVE_DOWN     &vim_y_bot_win &vim_y_lword_win &vim_y_rword_win &off_vy_win &off_vy_win &trans 
+// ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
+// │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
+    &trans    &off_vy_wi  &off_vy_win     &off_vy_win    &off_vy_win      &off_vy_win        &mmv MOVE_LEFT      &off_vy_win  &off_vy_win &off_vy_win   &off_vy_win   &off_vy_win  &trans 
+// ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
+//                                       │39             │40             │41             │   42                 │43          │44          │45          │
+                          &kp C_MUTE       &trans         &off_vy_win         &trans             &mmv MOVE_RIGHT     &trans       &trans       &trans 
+//                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
+//                                                                                           46
+                                                                                             &mkp LCLK 
+//                                                                                          ╰───────────────╯
+            >;
+           label = "vim win delete";
+           sensor-bindings = <&scroll_encoder>; 
+        };
+
+        vim_win_visual_layer {
             display-name = "wVISUAL";
             bindings = <
 
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &trans      &trans     &trans         &trans           &trans         &trans             &mmv MOVE_UP        &kp LS(DOWN) &kp LS(RIGHT) &trans    &vim_y_visual_win  &trans      &trans 
+    &trans    &off_vv_win &kp WORD_R_SEL_WIN &none        &none         &kp WORD_L_SEL_WIN   &mmv MOVE_UP        &kp LS(DOWN) &kp LS(RIGHT) &none      &vim_y_visual_win  &none        &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
-    &trans &vim_a_caps_win &vim_r_caps_win &kp F_LINE_SEL_WIN &kp L_LINE_SEL_WIN &htk LS(V_TOP_WIN) LS(V_BOT_WIN) &mmv MOVE_DOWN &trans  &trans &trans  &trans        &trans       &trans 
+    &trans     &none     &none   &kp F_LINE_SEL_WIN &kp L_LINE_SEL_WIN  &kp LS(V_TOP_WIN)    &mmv MOVE_DOWN      &kp LS(V_BOT_WIN) &kp WORD_L_SEL_WIN &kp WORD_R_SEL_WIN &none    &none        &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans      &trans  &vim_x_visual_win &vim_c_visual_win &vim_d_visual_win &vim_v_visual_win &mmv MOVE_LEFT   &kp LS(UP)   &kp LS(LEFT) &kp LS(PG_DN) &kp LS(PG_UP) &trans      &trans 
+    &trans      &none &vim_x_visual_win &vim_c_visual_win &vim_d_visual_win &vim_v_visual_win &mmv MOVE_LEFT      &kp LS(UP)   &kp LS(LEFT) &kp LS(PG_DN) &kp LS(PG_UP)  &none       &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
-                          &kp C_MUTE       &trans       &off_vim_visual_win &trans           &mmv MOVE_RIGHT     &trans       &trans       &trans 
+                          &kp C_MUTE       &trans     &off_vim_visual_win &trans             &mmv MOVE_RIGHT     &trans       &trans       &trans 
 //                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
 //                                                                                           46
                                                                                              &mkp LCLK 
@@ -580,19 +686,19 @@ ZMK_TRI_STATE(sw_app_st,
            sensor-bindings = <&scroll_encoder>; 
         };
 
-        vim_caps_win_layer {
+        vim_win_caps_layer {
             display-name = "wCAPS";
             bindings = <
 
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &trans      &none     &none           &none           &vim_p_caps_win     &none          &mmv MOVE_UP        &none        &none     &kp C_REDO_WIN  &vim_y_caps_win   &none       &trans 
+    &trans     &none     &none           &none           &vim_p_caps_win &none               &mmv MOVE_UP        &none        &none        &kp C_REDO_WIN &vim_y_caps_win &none    &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
-    &trans &vim_a_caps_win &vim_r_caps_win &none          &none           &kp V_BOT_WIN     &mmv MOVE_DOWN      &none        &none         &none       &vim_i_caps_win &vim_o_caps_win  &trans 
+    &trans &vim_a_caps_win &vim_r_caps_win &none          &none           &kp V_BOT_WIN      &mmv MOVE_DOWN      &none        &none        &none        &vim_i_caps_win &vim_o_caps_win  &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans      &none     &none &vim_change_caps_win &vim_del_caps_win &vim_visual_caps_win &mmv MOVE_LEFT       &none        &none        &none        &none         &none        &trans 
+    &trans      &none     &none  &vim_change_caps_win &vim_del_caps_win &vim_visual_caps_win &mmv MOVE_LEF       &none        &none        &none        &none         &none        &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
                           &kp C_MUTE       &trans         &trans          &trans             &mmv MOVE_RIGHT     &trans       &trans       &trans 
@@ -605,22 +711,22 @@ ZMK_TRI_STATE(sw_app_st,
            sensor-bindings = <&scroll_encoder>; 
         };
 
-        vim_vline_win_layer {
+        vim_win_vline_layer {
             display-name = "wLINE";
             bindings = <
 
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &trans      &none     &none           &none           &none           &none              &mmv MOVE_UP        &none        &none        &none        &vim_y_vline_win   &none       &trans 
+    &trans &off_vim_vline_win &none       &none           &none           &none              &mmv MOVE_UP        &none        &none        &none       &vim_y_vline_win   &none       &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
-    &trans    &none       &none           &none           &none &htk LS(V_TOP_WIN) LS(V_BOT_WIN) &mmv MOVE_DOWN  &none        &none        &kp VLINE_DOWN_WIN &kp VLINE_UP_WIN &none  &trans 
+    &trans      &none     &none           &none       &none &htk LS(V_TOP)_WIN LS(V_BOT)_WIN &mmv MOVE_DOWN      &none        &none        &kp VLINE_DOWN_WIN &kp VLINE_UP_WIN &none  &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans    &none     &vim_x_vline_win &vim_c_vline_win &vim_d_vline_win &none             &mmv MOVE_LEFT      &none        &none        &none        &none         &none        &trans 
+    &trans      &none     &vim_x_vline_win &vim_c_vline_win &vim_d_vline_win &none           &mmv MOVE_LEFT      &none        &none        &none        &none         &none        &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
-                          &kp C_MUTE       &trans      &off_vim_vline_win  &trans            &mmv MOVE_RIGHT     &trans       &trans       &trans 
+                          &kp C_MUTE       &trans       &off_vim_vline_win &trans            &mmv MOVE_RIGHT     &trans       &trans       &trans 
 //                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
 //                                                                                           46
                                                                                              &mkp LCLK 

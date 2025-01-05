@@ -29,36 +29,34 @@
 #define _LED 3
 
 #define _VIM_NORMAL 4
-#define _VIM_PENDING 5
-#define _VIM_CHANGE 6
-#define _VIM_DELETE 7
-#define _VIM_YANK 8
-#define _VIM_VISUAL 9
-#define _VIM_CAPS 10
-#define _VIM_VLINE 11
+#define _VIM_CHANGE 5
+#define _VIM_DELETE 6
+#define _VIM_YANK 7
+#define _VIM_VISUAL 8
+#define _VIM_CAPS 9
+#define _VIM_VLINE 10
 
-#define _VIM_NORMAL_WIN 12
-#define _VIM_PENDING_WIN 13
-#define _VIM_CHANGE_WIN 14
-#define _VIM_DELETE_WIN 15
-#define _VIM_YANK_WIN 16
-#define _VIM_VISUAL_WIN 17
-#define _VIM_CAPS_WIN 18
-#define _VIM_VLINE_WIN 19
+#define _VIM_NORMAL_WIN 11
+#define _VIM_CHANGE_WIN 12
+#define _VIM_DELETE_WIN 13
+#define _VIM_YANK_WIN 14
+#define _VIM_VISUAL_WIN 15
+#define _VIM_CAPS_WIN 16
+#define _VIM_VLINE_WIN 17
 
-#define _NUM 20
-#define _SYM 21
-#define _PREFIX_C_K 22
-#define _MOUSE 23
-#define _MOUSE_REV 24
-#define _MOUSE_FAST 25
-#define _MOUSE_NORM 26
-#define _MOUSE_SLOW 27
-#define _NAV 28
-#define _EXTEND 29
-#define _VIM 30
-#define _SUB_NAV 31
-#define _HRM 32
+#define _NUM 18
+#define _SYM 19
+#define _PREFIX_C_K 20
+#define _MOUSE 21
+#define _MOUSE_REV 22
+#define _MOUSE_FAST 23
+#define _MOUSE_NORM 24
+#define _MOUSE_SLOW 25
+#define _NAV 26
+#define _EXTEND 27
+#define _VIM 28
+#define _SUB_NAV 29
+#define _HRM 30
 // #define _TAB 13
 
 // Meh key
@@ -174,19 +172,19 @@ ZMK_TRI_STATE(alt_tab,
 ZMK_TRI_STATE(alt_tab_st,
   bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
   ignored-key-positions = <1 45 3>; // alt-tab itself  on _EXTEND layer, LS(TAB) on _EXTEND layer, _EXTEND layer key 
-  ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32>;
+  ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30>;
 )
 
 ZMK_TRI_STATE(sw_web_st,
     bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
     ignored-key-positions = <1 42 45 40 9 41>; // LS(TAB) on _NAV layer, LG(Q) to exit app on _NAV layer, _NAV/esc layer key 
-    ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32>;
+    ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30>;
 )
 
 ZMK_TRI_STATE(sw_app_st,
     bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
     ignored-key-positions = <1 42 45 40 9 41>; // LS(TAB) on _NAV layer, LG(Q) to exit app on _NAV layer 
-    ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32>;
+    ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30>;
 )
 
 / {

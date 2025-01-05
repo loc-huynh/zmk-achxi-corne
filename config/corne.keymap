@@ -231,7 +231,7 @@ ZMK_TRI_STATE(sw_app_st,
     &kp LGUI     &hrml LCTRL A &hrml LSHIFT R &hrml LALT S    &hrml LCMD T    &hrml MEH G     &mmv MOVE_DOWN      &hrmr MEH M  &hrmr LCMD N &hrmr LALT E &hrmr LSHIFT I &hrmr LCTRL O &kp LCTRL 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &kp LALT    &kp Z     &kp X           &kp C         &hlt _PREFIX_C_K D   &kp V            &mmv MOVE_LEFT      &kp K        &kp H        &comm_uds    &dot_mns       &slh_bsl    &kp LSHIFT 
+    &kp LALT    &kp Z     &kp X           &hlt _VIM C    &hlt _PREFIX_C_K D   &htk HYPER V   &mmv MOVE_LEFT      &htk HYPER K &kp H        &comm_uds    &dot_mns       &slh_bsl    &kp LSHIFT 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
                           &kp C_MUTE       &hlt _NAV ESC    &nslt _NUM ESC  &hlt _NAV SPACE  &mmv MOVE_RIGHT     &smart_shift &nslt _SYM TAB &hlt _EXTEND BSPC 
@@ -270,7 +270,7 @@ ZMK_TRI_STATE(sw_app_st,
     &trans     &hrml LCTRL A &hrml LSHIFT S   &hrml LALT D &hrml LCMD F    &hrml MEH G       &mmv MOVE_DOWN      &hrmr MEH H  &hrmr LCMD J &hrmr LALT K &hrmr LSHIFT L &hrmr LCTRL SEMI &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans       &kp Z     &kp X           &kp C        &hlt _PREFIX_C_K V &kp B             &mmv MOVE_LEFT      &kp N        &kp M        &comm_uds    &dot_mns       &slh_bsl    &trans 
+    &trans       &kp Z     &kp X           &hlt _VIM C   &hlt _PREFIX_C_K V &htk HYPER B     &mmv MOVE_LEFT      &htk HYPER N  &kp M        &comm_uds    &dot_mns       &slh_bsl    &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
                           &kp C_MUTE       &hlt _NAV ESC    &nslt _NUM ESC  &hlt _NAV SPACE  &mmv MOVE_RIGHT     &smart_shift &nslt _SYM TAB &hlt _EXTEND BSPC 

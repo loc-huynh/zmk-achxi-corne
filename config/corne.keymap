@@ -648,7 +648,7 @@ ZMK_TRI_STATE(sw_app_st,
     &trans    &off_vy_win &off_vy_win    &vim_y_lline_win &vim_y_rline_win &vim_y_top_win    &mmv MOVE_DOWN     &vim_y_bot_win &vim_y_lword_win &vim_y_rword_win &off_vy_win &off_vy_win &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans    &off_vy_wi  &off_vy_win     &off_vy_win    &off_vy_win      &off_vy_win        &mmv MOVE_LEFT      &off_vy_win  &off_vy_win &off_vy_win   &off_vy_win   &off_vy_win  &trans 
+    &trans    &off_vy_win  &off_vy_win     &off_vy_win    &off_vy_win      &off_vy_win        &mmv MOVE_LEFT      &off_vy_win  &off_vy_win &off_vy_win   &off_vy_win   &off_vy_win  &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
                           &kp C_MUTE       &trans         &off_vy_win         &trans             &mmv MOVE_RIGHT     &trans       &trans       &trans 

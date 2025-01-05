@@ -270,6 +270,17 @@
         bindings = <&mo>, <&kp>;
     };
 
+    /omit-if-no-ref/ hktk: hold_key_tap_key {
+        compatible = "zmk,behavior-hold-tap";
+        // label = "HOLD_LAYER_TAP";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <150>;
+        quick-tap-ms = <150>;
+        require-prior-idle-ms = <125>;
+        bindings = <&kp>, <&kp>;
+    };
+
     /omit-if-no-ref/ hml_ttl: hold_moment_layer_tap_toggle_layer {
         compatible = "zmk,behavior-hold-tap";
         // label = "HOLD_LAYER_TAP";
@@ -287,7 +298,6 @@
         tapping-term-ms = <150>;
         bindings = <&mo>, <&off_mouse>;
     };
-
 
     /omit-if-no-ref/ htk: hold_tap_key {
         compatible = "zmk,behavior-hold-tap";

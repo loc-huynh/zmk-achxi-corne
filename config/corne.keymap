@@ -698,7 +698,7 @@ ZMK_TRI_STATE(sw_app_st,
     &trans &vim_a_caps_win &vim_r_caps_win &none          &none           &kp V_BOT_WIN      &mmv MOVE_DOWN      &none        &none        &none        &vim_i_caps_win &vim_o_caps_win  &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans      &none     &none  &vim_change_caps_win &vim_del_caps_win &vim_visual_caps_win &mmv MOVE_LEF       &none        &none        &none        &none         &none        &trans 
+    &trans      &none     &none  &vim_change_caps_win &vim_del_caps_win &vim_visual_caps_win &mmv MOVE_LEFT      &none        &none        &none        &none         &none        &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
                           &kp C_MUTE       &trans         &trans          &trans             &mmv MOVE_RIGHT     &trans       &trans       &trans 

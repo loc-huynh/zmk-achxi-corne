@@ -103,7 +103,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp F_LINE>,
-        <&macro_tap &kp L_LINE_SEL>;
+        <&macro_tap &kp L_LINE_SEL>,
         <&macro_tap &kp BSPC>,
         <&macro_tap &to _COLEMAK_DH>;
     };
@@ -113,7 +113,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &tog _VIM_CHANGE>
+      bindings = <&macro_tap &tog _VIM_CHANGE>;
     };
 
     // vim DEL mode
@@ -187,7 +187,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &tog _VIM_DELETE>
+      bindings = <&macro_tap &tog _VIM_DELETE>;
     };
 
     // vim YANK mode
@@ -207,7 +207,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp WORD_L_SEL>,
-        <&macro_tap &kp C_COPY>;
+        <&macro_tap &kp C_COPY>,
         <&macro_tap &kp LEFT>;
     };
 
@@ -217,7 +217,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp F_LINE_SEL>,
-        <&macro_tap &kp C_COPY>;
+        <&macro_tap &kp C_COPY>,
         <&macro_tap &kp LEFT>;
     };
 
@@ -227,7 +227,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp L_LINE_SEL>,
-        <&macro_tap &kp C_COPY>;
+        <&macro_tap &kp C_COPY>,
         <&macro_tap &kp LEFT>;
     };
 
@@ -237,7 +237,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp VLINE_UP>,
-        <&macro_tap &kp C_COPY>;
+        <&macro_tap &kp C_COPY>,
         <&macro_tap &kp LEFT>;
     };
 
@@ -247,7 +247,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp VLINE_DOWN>,
-        <&macro_tap &kp C_COPY>;
+        <&macro_tap &kp C_COPY>,
         <&macro_tap &kp LEFT>;
     };
 
@@ -258,8 +258,8 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp F_LINE>,
-        <&macro_tap &kp L_LINE_SEL>;
-        <&macro_tap &kp C_COPY>;
+        <&macro_tap &kp L_LINE_SEL>,
+        <&macro_tap &kp C_COPY>,
         <&macro_tap &kp LEFT>;
     };
 
@@ -268,7 +268,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &tog _VIM_YANK>
+      bindings = <&macro_tap &tog _VIM_YANK>;
     };
 
     // vim VISUAL mode
@@ -277,7 +277,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &tog _VIM_VISUAL>
+      bindings = <&macro_tap &tog _VIM_VISUAL>;
     };
 
 
@@ -285,7 +285,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings 
-      = <&macro_tap &kp RIGHT> 
+      = <&macro_tap &kp RIGHT>
       ,<&macro_tap &to _COLEMAK_DH> 
       ;
     };
@@ -483,7 +483,7 @@
       bindings 
       = <&macro_tap &kp LEFT>,
         <&macro_tap &kp RIGHT>,
-        <&macro_tap &tog _VIM_VLINE>;
+        <&macro_tap &tog _VIM_VLINE>,
         <&macro_tap &tog _VIM_CAPS>;
     };
 
@@ -592,7 +592,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp F_LINE_WIN>,
-        <&macro_tap &kp L_LINE_SEL_WIN>;
+        <&macro_tap &kp L_LINE_SEL_WIN>,
         <&macro_tap &kp BSPC>,
         <&macro_tap &to _COLEMAK_DH>;
     };
@@ -602,7 +602,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &tog _VIM_CHANGE_WIN>
+      bindings = <&macro_tap &tog _VIM_CHANGE_WIN>;
     };
 
     // vim DEL mode
@@ -667,7 +667,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp F_LINE_WIN>,
-        <&macro_tap &kp L_LINE_SEL_WIN>;
+        <&macro_tap &kp L_LINE_SEL_WIN>,
         <&macro_tap &kp BSPC>;
     };
 
@@ -676,7 +676,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &tog _VIM_DELETE_WIN>
+      bindings = <&macro_tap &tog _VIM_DELETE_WIN>;
     };
 
     // vim YANK mode
@@ -686,7 +686,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp WORD_R_SEL_WIN>,
-        <&macro_tap &kp C_COPY_WIN>;
+        <&macro_tap &kp C_COPY_WIN>,
         <&macro_tap &kp LEFT>;
     };
 
@@ -696,7 +696,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp WORD_L_SEL_WIN>,
-        <&macro_tap &kp C_COPY_WIN>;
+        <&macro_tap &kp C_COPY_WIN>,
         <&macro_tap &kp LEFT>;
     };
 
@@ -706,7 +706,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp F_LINE_SEL_WIN>,
-        <&macro_tap &kp C_COPY_WIN>;
+        <&macro_tap &kp C_COPY_WIN>,
         <&macro_tap &kp LEFT>;
     };
 
@@ -716,7 +716,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp L_LINE_SEL_WIN>,
-        <&macro_tap &kp C_COPY_WIN>;
+        <&macro_tap &kp C_COPY_WIN>,
         <&macro_tap &kp LEFT>;
     };
 
@@ -726,7 +726,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp VLINE_UP_WIN>,
-        <&macro_tap &kp C_COPY_WIN>;
+        <&macro_tap &kp C_COPY_WIN>,
         <&macro_tap &kp LEFT>;
     };
 
@@ -736,7 +736,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp VLINE_DOWN_WIN>,
-        <&macro_tap &kp C_COPY_WIN>;
+        <&macro_tap &kp C_COPY_WIN>,
         <&macro_tap &kp LEFT>;
     };
 
@@ -747,8 +747,8 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp F_LINE_WIN>,
-        <&macro_tap &kp L_LINE_SEL_WIN>;
-        <&macro_tap &kp C_COPY_WIN>;
+        <&macro_tap &kp L_LINE_SEL_WIN>,
+        <&macro_tap &kp C_COPY_WIN>,
         <&macro_tap &kp LEFT>;
     };
 
@@ -757,7 +757,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &tog _VIM_YANK_WIN>
+      bindings = <&macro_tap &tog _VIM_YANK_WIN>;
     };
 
     // vim VISUAL mode
@@ -766,7 +766,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &tog _VIM_VISUAL_WIN>
+      bindings = <&macro_tap &tog _VIM_VISUAL_WIN>;
     };
 
     // end LATEST ADD achxi
@@ -973,7 +973,7 @@
       bindings 
       = <&macro_tap &kp LEFT>,
         <&macro_tap &kp RIGHT>,
-        <&macro_tap &tog _VIM_VLINE_WIN>;
+        <&macro_tap &tog _VIM_VLINE_WIN>,
         <&macro_tap &tog _VIM_CAPS_WIN>;
     };
 

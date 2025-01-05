@@ -125,7 +125,7 @@
       ,<&macro_tap &kp UP> 
       ,<&macro_tap &to _COLEMAK_DH> 
       ;
-    }
+    };
 
     /omit-if-no-ref/ vim_y_caps: vim_y_caps {
       compatible = "zmk,behavior-macro";
@@ -135,7 +135,7 @@
       ,<&macro_tap &kp C_COPY> 
       ,<&macro_tap &kp LEFT> 
       ;
-    }
+    };
 
     /omit-if-no-ref/ vim_del_caps: vim_del_caps {
       compatible = "zmk,behavior-macro";
@@ -144,7 +144,7 @@
       = <&macro_tap &kp L_LINE_SEL> 
       ,<&macro_tap &kp DEL> 
       ;
-    }
+    };
 
     /omit-if-no-ref/ vim_visual_caps: vim_visual_caps {
       compatible = "zmk,behavior-macro";
@@ -152,7 +152,7 @@
       bindings = <&macro_tap &kp F_LINE>,
         <&macro_tap &kp L_LINE_SEL>,
         <&macro_tap &tog _VIM_VLINE>;
-    }
+    };
 
     /omit-if-no-ref/ vim_change_caps: vim_change_caps {
       compatible = "zmk,behavior-macro";
@@ -162,7 +162,7 @@
       ,<&macro_tap &kp DEL> 
       ,<&macro_tap &to _COLEMAK_DH> 
       ;
-    }
+    };
 
     /omit-if-no-ref/ vim_r_caps: vim_r_caps {
       compatible = "zmk,behavior-macro";
@@ -171,7 +171,7 @@
       = <&macro_tap &kp INS> 
       ,<&macro_tap &to _COLEMAK_DH> 
       ;
-    }
+    };
 
     /omit-if-no-ref/ vim_p_caps: vim_p_caps {
       compatible = "zmk,behavior-macro";
@@ -433,7 +433,7 @@
       ,<&macro_tap &kp UP> 
       ,<&macro_tap &to _COLEMAK_DH> 
       ;
-    }
+    };
 
     /omit-if-no-ref/ vim_y_caps_win: vim_y_caps_win {
       compatible = "zmk,behavior-macro";
@@ -443,7 +443,7 @@
       ,<&macro_tap &kp C_COPY_WIN> 
       ,<&macro_tap &kp LEFT> 
       ;
-    }
+    };
 
     /omit-if-no-ref/ vim_del_caps_win: vim_del_caps_win {
       compatible = "zmk,behavior-macro";
@@ -452,7 +452,7 @@
       = <&macro_tap &kp L_LINE_SEL_WIN> 
       ,<&macro_tap &kp DEL> 
       ;
-    }
+    };
 
     /omit-if-no-ref/ vim_visual_caps_win: vim_visual_caps_win {
       compatible = "zmk,behavior-macro";
@@ -460,7 +460,7 @@
       bindings = <&macro_tap &kp F_LINE_WIN>,
         <&macro_tap &kp L_LINE_SEL_WIN>,
         <&macro_tap &tog _VIM_VLINE_WIN>;
-    }
+    };
 
     /omit-if-no-ref/ vim_change_caps_win: vim_change_caps_win {
       compatible = "zmk,behavior-macro";
@@ -470,7 +470,7 @@
       ,<&macro_tap &kp DEL> 
       ,<&macro_tap &to _COLEMAK_DH> 
       ;
-    }
+    };
 
     /omit-if-no-ref/ vim_r_caps_win: vim_r_caps_win {
       compatible = "zmk,behavior-macro";
@@ -479,7 +479,7 @@
       = <&macro_tap &kp INS> 
       ,<&macro_tap &to _COLEMAK_DH> 
       ;
-    }
+    };
 
     /omit-if-no-ref/ vim_p_caps_win: vim_p_caps_win {
       compatible = "zmk,behavior-macro";

@@ -264,9 +264,9 @@
         // label = "HOLD_LAYER_TAP";
         #binding-cells = <2>;
         flavor = "tap-preferred";
-        tapping-term-ms = <TAPPING_TERM_MS>;
-        quick-tap-ms = <QUICK_TAP_MS>;
-        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
+        tapping-term-ms = <150>;
+        quick-tap-ms = <150>;
+        require-prior-idle-ms = <125>;
         bindings = <&mo>, <&kp>;
     };
 
@@ -275,9 +275,9 @@
         // label = "HOLD_LAYER_TAP";
         #binding-cells = <2>;
         flavor = "tap-preferred";
-        tapping-term-ms = <TAPPING_TERM_MS>;
-        quick-tap-ms = <QUICK_TAP_MS>;
-        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
+        tapping-term-ms = <150>;
+        quick-tap-ms = <150>;
+        require-prior-idle-ms = <125>;
         bindings = <&kp>, <&kp>;
     };
 

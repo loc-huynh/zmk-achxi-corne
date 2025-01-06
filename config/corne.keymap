@@ -396,7 +396,7 @@ ZMK_TRI_STATE(sw_app_st,
     &trans     &vim_a     &vim_r          &kp F_LINE      &kp L_LINE     &kp V_BOT           &mmv MOVE_DOWN      &kp V_TOP     &kp WORD_L  &kp WORD_R   &vim_i        &vim_o        &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans      &none     &vim_x        &tog _VIM_CHANGE &tog _VIM_DELETE &vim_visual        &mmv MOVE_LEFT      &kp UP        &kp LEFT    &kp PG_DN    &kp PG_UP     &kp SEARCH   &trans 
+    &trans      &none     &vim_x        &tog _VIM_CHANGE &tog _VIM_DELETE &vim_visual        &mmv MOVE_LEFT      &kp UP        &kp LEFT    &kp PG_DN    &kp PG_UP     &vim_search   &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
                           &kp C_MUTE       &trans         &tog _VIM_NORMAL &hlt _NAV SPACE   &mmv MOVE_RIGHT     &mo _VIM_CAPS &nslt _SYM TAB &trans
@@ -571,7 +571,7 @@ ZMK_TRI_STATE(sw_app_st,
     &trans &vim_a_win &vim_r_win &kp F_LINE_WIN  &kp L_LINE_WIN  &kp V_BOT_WIN                &mmv MOVE_DOWN      &kp V_TOP_WIN &kp WORD_L_WIN  &kp WORD_R_WIN &vim_i_win &vim_o_win   &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans      &none     &vim_x_win  &tog _VIM_CHANGE_WIN &tog _VIM_DELETE_WIN &vim_visual_win &mmv MOVE_LEFT   &kp UP        &kp LEFT    &kp PG_DN    &kp PG_UP     &kp SEARCH_WIN   &trans 
+    &trans      &none     &vim_x_win  &tog _VIM_CHANGE_WIN &tog _VIM_DELETE_WIN &vim_visual_win &mmv MOVE_LEFT   &kp UP        &kp LEFT    &kp PG_DN    &kp PG_UP     &vim_search_win  &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
                           &kp C_MUTE       &trans      &tog _VIM_NORMAL_WIN &hlt _NAV SPACE   &mmv MOVE_RIGHT     &mo _VIM_CAPS &nslt _SYM TAB &trans

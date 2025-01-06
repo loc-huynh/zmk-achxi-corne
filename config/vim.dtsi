@@ -442,6 +442,15 @@
       ;
     };
 
+    /omit-if-no-ref/ vim_search: vim_search {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings 
+      = <&macro_tap &kp SEARCH> 
+      ,<&macro_tap &to _COLEMAK_DH> 
+      ;
+    };
+
     /omit-if-no-ref/ vim_visual: vim_visual {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
@@ -950,6 +959,15 @@
       bindings 
       = <&macro_tap &kp RIGHT> 
       ,<&macro_tap &kp BSPC> 
+      ,<&macro_tap &to _COLEMAK_DH> 
+      ;
+    };
+
+    /omit-if-no-ref/ vim_search_win: vim_search_win {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings 
+      = <&macro_tap &kp SEARCH_WIN> 
       ,<&macro_tap &to _COLEMAK_DH> 
       ;
     };

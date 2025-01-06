@@ -4,6 +4,9 @@
 #define V_TOP LG(UP)
 #define V_BOT LG(DOWN)
 
+#define V_TOP_SEL LS(LG(UP))
+#define V_BOT_SEL LS(LG(DOWN))
+
 // WINDOWS vim section
 #define SEARCH_WIN LC(F)
 
@@ -30,6 +33,9 @@
 
 #define V_TOP_WIN LC(HOME)
 #define V_BOT_WIN LC(END)
+
+#define V_TOP_SEL_WIN LS(LC(HOME))
+#define V_BOT_SEL_WIN LS(LC(END))
 // end WINDOWS vim section
 
 / {
@@ -82,7 +88,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp V_TOP>,
+      bindings = <&macro_tap &kp V_TOP_SEL>,
         <&macro_tap &kp BSPC>,
         <&macro_tap &to _COLEMAK_DH>;
     };
@@ -92,7 +98,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp V_BOT>,
+      bindings = <&macro_tap &kp V_BOT_SEL>,
         <&macro_tap &kp BSPC>,
         <&macro_tap &to _COLEMAK_DH>;
     };
@@ -162,7 +168,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp V_TOP>,
+      bindings = <&macro_tap &kp V_TOP_SEL>,
         <&macro_tap &kp BSPC>,
         <&macro_tap &tog _VIM_DELETE>;
     };
@@ -172,7 +178,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp V_BOT>,
+      bindings = <&macro_tap &kp V_BOT_SEL>,
         <&macro_tap &kp BSPC>,
         <&macro_tap &tog _VIM_DELETE>;
     };
@@ -247,7 +253,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp V_TOP>,
+      bindings = <&macro_tap &kp V_TOP_SEL>,
         <&macro_tap &kp C_COPY>,
         <&macro_tap &kp LEFT>,
         <&macro_tap &tog _VIM_YANK>;
@@ -258,7 +264,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp V_BOT>,
+      bindings = <&macro_tap &kp V_BOT_SEL>,
         <&macro_tap &kp C_COPY>,
         <&macro_tap &kp LEFT>,
         <&macro_tap &tog _VIM_YANK>;
@@ -584,7 +590,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp V_TOP_WIN>,
+      bindings = <&macro_tap &kp V_TOP_SEL_WIN>,
         <&macro_tap &kp BSPC>,
         <&macro_tap &to _COLEMAK_DH>;
     };
@@ -594,7 +600,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp V_BOT_WIN>,
+      bindings = <&macro_tap &kp V_BOT_SEL_WIN>,
         <&macro_tap &kp BSPC>,
         <&macro_tap &to _COLEMAK_DH>;
     };
@@ -664,7 +670,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp V_TOP_WIN>,
+      bindings = <&macro_tap &kp V_TOP_SEL_WIN>,
         <&macro_tap &kp BSPC>,
         <&macro_tap &tog _VIM_DELETE_WIN>;
     };
@@ -674,7 +680,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp V_BOT_WIN>,
+      bindings = <&macro_tap &kp V_BOT_SEL_WIN>,
         <&macro_tap &kp BSPC>,
         <&macro_tap &tog _VIM_DELETE_WIN>;
     };
@@ -749,7 +755,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp V_TOP_WIN>,
+      bindings = <&macro_tap &kp V_TOP_SEL_WIN>,
         <&macro_tap &kp C_COPY_WIN>,
         <&macro_tap &kp LEFT>,
         <&macro_tap &tog _VIM_YANK_WIN>;
@@ -760,7 +766,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp V_BOT_WIN>,
+      bindings = <&macro_tap &kp V_BOT_SEL_WIN>,
         <&macro_tap &kp C_COPY_WIN>,
         <&macro_tap &kp LEFT>,
         <&macro_tap &tog _VIM_YANK_WIN>;

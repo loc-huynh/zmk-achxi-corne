@@ -82,7 +82,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp VLINE_UP>,
+      bindings = <&macro_tap &kp V_TOP>,
         <&macro_tap &kp BSPC>,
         <&macro_tap &to _COLEMAK_DH>;
     };
@@ -92,7 +92,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp VLINE_DOWN>,
+      bindings = <&macro_tap &kp V_BOT>,
         <&macro_tap &kp BSPC>,
         <&macro_tap &to _COLEMAK_DH>;
     };
@@ -123,7 +123,8 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp WORD_R_SEL>,
-        <&macro_tap &kp BSPC>;
+        <&macro_tap &kp BSPC>,
+        <&macro_tap &tog _VIM_DELETE>;
     };
 
     /omit-if-no-ref/ vim_d_lword: vim_d_left_word {
@@ -132,7 +133,8 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp WORD_L_SEL>,
-        <&macro_tap &kp BSPC>;
+        <&macro_tap &kp BSPC>,
+        <&macro_tap &tog _VIM_DELETE>;
     };
 
     /omit-if-no-ref/ vim_d_lline: vim_d_left_line {
@@ -141,7 +143,8 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp F_LINE_SEL>,
-        <&macro_tap &kp BSPC>;
+        <&macro_tap &kp BSPC>,
+        <&macro_tap &tog _VIM_DELETE>;
     };
 
     /omit-if-no-ref/ vim_d_rline: vim_d_right_line {
@@ -150,7 +153,8 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp L_LINE_SEL>,
-        <&macro_tap &kp BSPC>;
+        <&macro_tap &kp BSPC>,
+        <&macro_tap &tog _VIM_DELETE>;
     };
 
     /omit-if-no-ref/ vim_d_top: vim_d_top {
@@ -158,8 +162,9 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp VLINE_UP>,
-        <&macro_tap &kp BSPC>;
+      bindings = <&macro_tap &kp V_TOP>,
+        <&macro_tap &kp BSPC>,
+        <&macro_tap &tog _VIM_DELETE>;
     };
 
     /omit-if-no-ref/ vim_d_bot: vim_d_bot {
@@ -167,8 +172,9 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp VLINE_DOWN>,
-        <&macro_tap &kp BSPC>;
+      bindings = <&macro_tap &kp V_BOT>,
+        <&macro_tap &kp BSPC>,
+        <&macro_tap &tog _VIM_DELETE>;
     };
 
 
@@ -179,7 +185,8 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &kp F_LINE>,
         <&macro_tap &kp L_LINE_SEL>,
-        <&macro_tap &kp BSPC>;
+        <&macro_tap &kp BSPC>,
+        <&macro_tap &tog _VIM_DELETE>;
     };
 
     /omit-if-no-ref/ off_vd: off_vim_del {
@@ -198,7 +205,8 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &kp WORD_R_SEL>,
         <&macro_tap &kp C_COPY>,
-        <&macro_tap &kp LEFT>;
+        <&macro_tap &kp LEFT>,
+        <&macro_tap &tog _VIM_YANK>;
     };
 
     /omit-if-no-ref/ vim_y_lword: vim_y_left_word {
@@ -208,7 +216,8 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &kp WORD_L_SEL>,
         <&macro_tap &kp C_COPY>,
-        <&macro_tap &kp LEFT>;
+        <&macro_tap &kp LEFT>,
+        <&macro_tap &tog _VIM_YANK>;
     };
 
     /omit-if-no-ref/ vim_y_lline: vim_y_left_line {
@@ -218,7 +227,8 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &kp F_LINE_SEL>,
         <&macro_tap &kp C_COPY>,
-        <&macro_tap &kp LEFT>;
+        <&macro_tap &kp LEFT>,
+        <&macro_tap &tog _VIM_YANK>;
     };
 
     /omit-if-no-ref/ vim_y_rline: vim_y_right_line {
@@ -228,7 +238,8 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &kp L_LINE_SEL>,
         <&macro_tap &kp C_COPY>,
-        <&macro_tap &kp LEFT>;
+        <&macro_tap &kp LEFT>,
+        <&macro_tap &tog _VIM_YANK>;
     };
 
     /omit-if-no-ref/ vim_y_top: vim_y_top {
@@ -236,9 +247,10 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp VLINE_UP>,
+      bindings = <&macro_tap &kp V_TOP>,
         <&macro_tap &kp C_COPY>,
-        <&macro_tap &kp LEFT>;
+        <&macro_tap &kp LEFT>,
+        <&macro_tap &tog _VIM_YANK>;
     };
 
     /omit-if-no-ref/ vim_y_bot: vim_y_bot {
@@ -246,9 +258,10 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp VLINE_DOWN>,
+      bindings = <&macro_tap &kp V_BOT>,
         <&macro_tap &kp C_COPY>,
-        <&macro_tap &kp LEFT>;
+        <&macro_tap &kp LEFT>,
+        <&macro_tap &tog _VIM_YANK>;
     };
 
 
@@ -260,7 +273,8 @@
       bindings = <&macro_tap &kp F_LINE>,
         <&macro_tap &kp L_LINE_SEL>,
         <&macro_tap &kp C_COPY>,
-        <&macro_tap &kp LEFT>;
+        <&macro_tap &kp LEFT>,
+        <&macro_tap &tog _VIM_YANK>;
     };
 
     /omit-if-no-ref/ off_vy: off_vim_yank {
@@ -334,6 +348,7 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &kp F_LINE>,
         <&macro_tap &kp L_LINE_SEL>,
+        <&macro_tap &tog _VIM_CAPS>,
         <&macro_tap &tog _VIM_VLINE>;
     };
 
@@ -387,8 +402,18 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings 
-      = <&macro_tap &kp ENTER> 
+      =<&macro_tap &kp L_LINE> 
+      ,<&macro_tap &kp ENTER> 
       ,<&macro_tap &to _COLEMAK_DH> 
+      ;
+    };
+
+    /omit-if-no-ref/ vim_add_line: vim_add_line {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings 
+      =<&macro_tap &kp L_LINE> 
+      ,<&macro_tap &kp ENTER> 
       ;
     };
 
@@ -474,8 +499,7 @@
       bindings 
       = <&macro_tap &kp LEFT>,
         <&macro_tap &kp RIGHT>,
-        <&macro_tap &tog _VIM_VLINE>,
-        <&macro_tap &tog _VIM_CAPS>;
+        <&macro_tap &tog _VIM_VLINE>;
     };
 
     /omit-if-no-ref/ vim_y_vline: vim_y_vline {
@@ -484,8 +508,7 @@
       bindings 
       = <&macro_tap &kp C_COPY>,
         <&macro_tap &kp LEFT>,
-        <&macro_tap &tog _VIM_VLINE>,
-        <&macro_tap &tog _VIM_CAPS>;
+        <&macro_tap &tog _VIM_VLINE>;
     };
 
     /omit-if-no-ref/ vim_d_vline: vim_d_vline {
@@ -494,8 +517,7 @@
       bindings 
       = <&macro_tap &kp DEL>,
         <&macro_tap &kp DEL>,
-        <&macro_tap &tog _VIM_VLINE>,
-        <&macro_tap &tog _VIM_CAPS>;
+        <&macro_tap &tog _VIM_VLINE>;
     };
 
     /omit-if-no-ref/ vim_c_vline: vim_c_vline {
@@ -562,7 +584,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp VLINE_UP_WIN>,
+      bindings = <&macro_tap &kp V_TOP_WIN>,
         <&macro_tap &kp BSPC>,
         <&macro_tap &to _COLEMAK_DH>;
     };
@@ -572,7 +594,7 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp VLINE_DOWN_WIN>,
+      bindings = <&macro_tap &kp V_BOT_WIN>,
         <&macro_tap &kp BSPC>,
         <&macro_tap &to _COLEMAK_DH>;
     };
@@ -603,7 +625,8 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp WORD_R_SEL_WIN>,
-        <&macro_tap &kp BSPC>;
+        <&macro_tap &kp BSPC>,
+        <&macro_tap &tog _VIM_DELETE_WIN>;
     };
 
     /omit-if-no-ref/ vim_d_lword_win: vim_d_left_word_win {
@@ -612,7 +635,8 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp WORD_L_SEL_WIN>,
-        <&macro_tap &kp BSPC>;
+        <&macro_tap &kp BSPC>,
+        <&macro_tap &tog _VIM_DELETE_WIN>;
     };
 
     /omit-if-no-ref/ vim_d_lline_win: vim_d_left_line_win {
@@ -621,7 +645,8 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp F_LINE_SEL_WIN>,
-        <&macro_tap &kp BSPC>;
+        <&macro_tap &kp BSPC>,
+        <&macro_tap &tog _VIM_DELETE_WIN>;
     };
 
     /omit-if-no-ref/ vim_d_rline_win: vim_d_right_line_win {
@@ -630,7 +655,8 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp L_LINE_SEL_WIN>,
-        <&macro_tap &kp BSPC>;
+        <&macro_tap &kp BSPC>,
+        <&macro_tap &tog _VIM_DELETE_WIN>;
     };
 
     /omit-if-no-ref/ vim_d_top_win: vim_d_top_win {
@@ -638,8 +664,9 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp VLINE_UP_WIN>,
-        <&macro_tap &kp BSPC>;
+      bindings = <&macro_tap &kp V_TOP_WIN>,
+        <&macro_tap &kp BSPC>,
+        <&macro_tap &tog _VIM_DELETE_WIN>;
     };
 
     /omit-if-no-ref/ vim_d_bot_win: vim_d_bot_win {
@@ -647,8 +674,9 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp VLINE_DOWN_WIN>,
-        <&macro_tap &kp BSPC>;
+      bindings = <&macro_tap &kp V_BOT_WIN>,
+        <&macro_tap &kp BSPC>,
+        <&macro_tap &tog _VIM_DELETE_WIN>;
     };
 
 
@@ -659,7 +687,8 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &kp F_LINE_WIN>,
         <&macro_tap &kp L_LINE_SEL_WIN>,
-        <&macro_tap &kp BSPC>;
+        <&macro_tap &kp BSPC>,
+        <&macro_tap &tog _VIM_DELETE_WIN>;
     };
 
     /omit-if-no-ref/ off_vd_win: off_vim_del_win {
@@ -678,7 +707,8 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &kp WORD_R_SEL_WIN>,
         <&macro_tap &kp C_COPY_WIN>,
-        <&macro_tap &kp LEFT>;
+        <&macro_tap &kp LEFT>,
+        <&macro_tap &tog _VIM_YANK_WIN>;
     };
 
     /omit-if-no-ref/ vim_y_lword_win: vim_y_left_word_win {
@@ -688,7 +718,8 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &kp WORD_L_SEL_WIN>,
         <&macro_tap &kp C_COPY_WIN>,
-        <&macro_tap &kp LEFT>;
+        <&macro_tap &kp LEFT>,
+        <&macro_tap &tog _VIM_YANK_WIN>;
     };
 
     /omit-if-no-ref/ vim_y_lline_win: vim_y_left_line_win {
@@ -698,7 +729,8 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &kp F_LINE_SEL_WIN>,
         <&macro_tap &kp C_COPY_WIN>,
-        <&macro_tap &kp LEFT>;
+        <&macro_tap &kp LEFT>,
+        <&macro_tap &tog _VIM_YANK_WIN>;
     };
 
     /omit-if-no-ref/ vim_y_rline_win: vim_y_right_line_win {
@@ -708,7 +740,8 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &kp L_LINE_SEL_WIN>,
         <&macro_tap &kp C_COPY_WIN>,
-        <&macro_tap &kp LEFT>;
+        <&macro_tap &kp LEFT>,
+        <&macro_tap &tog _VIM_YANK_WIN>;
     };
 
     /omit-if-no-ref/ vim_y_top_win: vim_y_top_win {
@@ -716,9 +749,10 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp VLINE_UP_WIN>,
+      bindings = <&macro_tap &kp V_TOP_WIN>,
         <&macro_tap &kp C_COPY_WIN>,
-        <&macro_tap &kp LEFT>;
+        <&macro_tap &kp LEFT>,
+        <&macro_tap &tog _VIM_YANK_WIN>;
     };
 
     /omit-if-no-ref/ vim_y_bot_win: vim_y_bot_win {
@@ -726,9 +760,10 @@
       tap-ms = <0>;
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&macro_tap &kp VLINE_DOWN_WIN>,
+      bindings = <&macro_tap &kp V_BOT_WIN>,
         <&macro_tap &kp C_COPY_WIN>,
-        <&macro_tap &kp LEFT>;
+        <&macro_tap &kp LEFT>,
+        <&macro_tap &tog _VIM_YANK_WIN>;
     };
 
 
@@ -740,7 +775,8 @@
       bindings = <&macro_tap &kp F_LINE_WIN>,
         <&macro_tap &kp L_LINE_SEL_WIN>,
         <&macro_tap &kp C_COPY_WIN>,
-        <&macro_tap &kp LEFT>;
+        <&macro_tap &kp LEFT>,
+        <&macro_tap &tog _VIM_YANK_WIN>;
     };
 
     /omit-if-no-ref/ off_vy_win: off_vim_yank_win {
@@ -824,6 +860,7 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &kp F_LINE_WIN>,
         <&macro_tap &kp L_LINE_SEL_WIN>,
+        <&macro_tap &tog _VIM_CAPS_WIN>,
         <&macro_tap &tog _VIM_VLINE_WIN>;
     };
 
@@ -877,8 +914,18 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings 
-      = <&macro_tap &kp ENTER> 
+      =<&macro_tap &kp L_LINE_WIN> 
+      ,<&macro_tap &kp ENTER> 
       ,<&macro_tap &to _COLEMAK_DH> 
+      ;
+    };
+
+    /omit-if-no-ref/ vim_add_line_win: vim_add_line_win {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings 
+      =<&macro_tap &kp L_LINE_WIN> 
+      ,<&macro_tap &kp ENTER> 
       ;
     };
 
@@ -955,8 +1002,7 @@
       bindings 
       = <&macro_tap &kp LEFT>,
         <&macro_tap &kp RIGHT>,
-        <&macro_tap &tog _VIM_VLINE_WIN>,
-        <&macro_tap &tog _VIM_CAPS_WIN>;
+        <&macro_tap &tog _VIM_VLINE_WIN>;
     };
 
     /omit-if-no-ref/ vim_y_vline_win: vim_y_vline_win {
@@ -965,8 +1011,7 @@
       bindings 
       = <&macro_tap &kp C_COPY_WIN>,
         <&macro_tap &kp LEFT>,
-        <&macro_tap &tog _VIM_VLINE_WIN>,
-        <&macro_tap &tog _VIM_CAPS_WIN>;
+        <&macro_tap &tog _VIM_VLINE_WIN>;
     };
 
     /omit-if-no-ref/ vim_d_vline_win: vim_d_vline_win {
@@ -975,8 +1020,7 @@
       bindings 
       = <&macro_tap &kp DEL>,
         <&macro_tap &kp DEL>,
-        <&macro_tap &tog _VIM_VLINE_WIN>,
-        <&macro_tap &tog _VIM_CAPS_WIN>;
+        <&macro_tap &tog _VIM_VLINE_WIN>;
     };
 
     /omit-if-no-ref/ vim_c_vline_win: vim_c_vline_win {
@@ -992,8 +1036,7 @@
       #binding-cells = <0>;
       bindings 
       = <&macro_tap &kp C_CUT_WIN>,
-        <&macro_tap &tog _VIM_VLINE_WIN>,
-        <&macro_tap &tog _VIM_CAPS_WIN>;
+        <&macro_tap &tog _VIM_VLINE_WIN>;
     };
 
 

@@ -482,7 +482,7 @@ ZMK_TRI_STATE(sw_app_st,
                                                                                              &mkp LCLK 
 //                                                                                          ╰───────────────╯
             >;
-           label = "vim delete";
+           label = "vim yank";
            sensor-bindings = <&scroll_encoder>; 
         };
 
@@ -532,7 +532,7 @@ ZMK_TRI_STATE(sw_app_st,
                                                                                              &mkp LCLK 
 //                                                                                          ╰───────────────╯
             >;
-           label = "vim visual arrow";
+           label = "vim varrow";
            sensor-bindings = <&scroll_encoder>; 
         };
 
@@ -582,7 +582,7 @@ ZMK_TRI_STATE(sw_app_st,
                                                                                              &mkp LCLK 
 //                                                                                          ╰───────────────╯
             >;
-           label = "vim visual line";
+           label = "vim vline";
            sensor-bindings = <&scroll_encoder>; 
         };
 
@@ -682,7 +682,7 @@ ZMK_TRI_STATE(sw_app_st,
                                                                                              &mkp LCLK 
 //                                                                                          ╰───────────────╯
             >;
-           label = "vim win delete";
+           label = "vim win yank";
            sensor-bindings = <&scroll_encoder>; 
         };
 
@@ -732,7 +732,7 @@ ZMK_TRI_STATE(sw_app_st,
                                                                                              &mkp LCLK 
 //                                                                                          ╰───────────────╯
             >;
-           label = "vim win visual arrow";
+           label = "vim win varrow";
            sensor-bindings = <&scroll_encoder>; 
         };
 
@@ -782,7 +782,7 @@ ZMK_TRI_STATE(sw_app_st,
                                                                                              &mkp LCLK 
 //                                                                                          ╰───────────────╯
             >;
-           label = "vim win visual line";
+           label = "vim win vline";
            sensor-bindings = <&scroll_encoder>; 
         };
 

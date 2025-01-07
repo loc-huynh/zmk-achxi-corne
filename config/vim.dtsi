@@ -1093,28 +1093,28 @@
     /omit-if-no-ref/ vi_tl: vi_top_left {
       compatible = "zmk,behavior-mod-morph";
       bindings = <&kp LS(V_TOP)>, <&kp LS(LEFT)>;
-      mods = <LCTRL>;
+      mods = <MOD_LCTL>;
       #binding-cells = <0>;
     };
 
     /omit-if-no-ref/ vi_wld: vi_word_left_down {
       compatible = "zmk,behavior-mod-morph";
       bindings = <&kp WORD_L_SEL>, <&kp LS(DOWN)>;
-      mods = <LCTRL>;
+      mods = <MOD_LCTL>;
       #binding-cells = <0>;
     };
 
     /omit-if-no-ref/ vi_wru: vi_word_right_up {
       compatible = "zmk,behavior-mod-morph";
       bindings = <&kp WORD_R_SEL>, <&kp LS(UP)>;
-      mods = <LCTRL>;
+      mods = <MOD_LCTL>;
       #binding-cells = <0>;
     };
 
     /omit-if-no-ref/ vi_nr: vi_none_right {
       compatible = "zmk,behavior-mod-morph";
       bindings = <&none>, <&kp LS(RIGHT)>;
-      mods = <LCTRL>;
+      mods = <MOD_LCTL>;
       #binding-cells = <0>;
     };
 
@@ -1122,28 +1122,28 @@
     /omit-if-no-ref/ vi_tl_win: vi_top_left_win {
       compatible = "zmk,behavior-mod-morph";
       bindings = <&kp LS(V_TOP_WIN)>, <&kp LS(LEFT)>;
-      mods = <LCTRL>;
+      mods = <MOD_LCTL>;
       #binding-cells = <0>;
     };
 
     /omit-if-no-ref/ vi_wld_win: vi_word_left_down_win {
       compatible = "zmk,behavior-mod-morph";
       bindings = <&kp WORD_L_SEL_WIN>, <&kp LS(DOWN)>;
-      mods = <LCTRL>;
+      mods = <MOD_LCTL>;
       #binding-cells = <0>;
     };
 
     /omit-if-no-ref/ vi_wru_win: vi_word_right_up_win {
       compatible = "zmk,behavior-mod-morph";
       bindings = <&kp WORD_R_SEL_WIN>, <&kp LS(UP)>;
-      mods = <LCTRL>;
+      mods = <MOD_LCTL>;
       #binding-cells = <0>;
     };
 
     /omit-if-no-ref/ vi_nr_win: vi_none_right_win {
       compatible = "zmk,behavior-mod-morph";
       bindings = <&none>, <&kp LS(RIGHT)>;
-      mods = <LCTRL>;
+      mods = <MOD_LCTL>;
       #binding-cells = <0>;
     };
     // end BEHAVIOR WINDOWS SECTION

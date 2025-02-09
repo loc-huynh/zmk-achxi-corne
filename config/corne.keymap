@@ -745,7 +745,7 @@ ZMK_TRI_STATE(sw_app_st,
     &trans  &hrml LCTRL F6 &hrml LSHIFT DOT &hrml LALT COMMA &hrml LCMD UNDER &hrml MEH F7  &mmv MOVE_DOWN  &hrmr MEH KP_PLUS &hrmr LCMD N1 &hrmr LALT N2 &hrmr LSHIFT N3 &hrmr LCTRL KP_MINUS &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤ ├───────────────┤ ├─────────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │  32               │33               │34          │35          │36           │37          │38             │
-    &trans      &kp F12     &kp F9           &kp F10       &kp F11        &kp F8            &mmv MOVE_LEFT    &kp BSPC          &kp N4        &kp N5      &kp N6       &kp KP_EQUAL    &trans 
+    &trans      &kp F12     &kp F9           &kp F10       &kp F11        &kp F8            &mmv MOVE_LEFT    &kp SPACE         &kp N4        &kp N5      &kp N6       &kp KP_EQUAL    &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤ ├───────────────┤ ├─────────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │  42               │43               │44          │45          │
                            &trans  &hml_ttl _NAV _NUM  &hml_ttl _HRM _NUM &hlt _NAV SPACE   &mmv MOVE_RIGHT   &kp N0            &hl_tl       &trans 

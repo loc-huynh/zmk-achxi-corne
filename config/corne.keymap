@@ -47,16 +47,17 @@
 #define _NUM 18
 #define _SYM 19
 #define _PREFIX_C_K 20
-#define _MOUSE 21
-#define _MOUSE_REV 22
-#define _MOUSE_FAST 23
-#define _MOUSE_NORM 24
-#define _MOUSE_SLOW 25
-#define _NAV 26
-#define _EXTEND 27
-#define _VIM 28
-#define _SUB_NAV 29
-#define _HRM 30
+#define _PRECAP_C_K 21
+#define _MOUSE 22
+#define _MOUSE_REV 23
+#define _MOUSE_FAST 24
+#define _MOUSE_NORM 25
+#define _MOUSE_SLOW 26
+#define _NAV 27
+#define _EXTEND 28
+#define _VIM 29
+#define _SUB_NAV 30
+#define _HRM 31
 // #define _TAB 13
 
 // Meh key
@@ -122,6 +123,8 @@
 #define SFT_TAB LS(TAB)
 #define FRC_CLOSE LG(LA(ESC))
 
+#define GRID_SHOW LA(LC(LS(Z)))
+
 #define CANCEL_MOD F22
 
 // Behaviors Constants
@@ -172,19 +175,19 @@ ZMK_TRI_STATE(alt_tab,
 ZMK_TRI_STATE(alt_tab_st,
   bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
   ignored-key-positions = <1 45 3>; // alt-tab itself  on _EXTEND layer, LS(TAB) on _EXTEND layer, _EXTEND layer key 
-  ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30>;
+  ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31>;
 )
 
 ZMK_TRI_STATE(sw_web_st,
     bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
     ignored-key-positions = <1 42 45 40 9 41>; // LS(TAB) on _NAV layer, LG(Q) to exit app on _NAV layer, _NAV/esc layer key 
-    ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30>;
+    ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31>;
 )
 
 ZMK_TRI_STATE(sw_app_st,
     bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
     ignored-key-positions = <1 42 45 40 9 41>; // LS(TAB) on _NAV layer, LG(Q) to exit app on _NAV layer 
-    ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30>;
+    ignored-layers = <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31>;
 )
 
 / {
@@ -230,13 +233,13 @@ ZMK_TRI_STATE(sw_app_st,
 
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &mo _SYSTEM &kp Q     &kp W           &kp F           &kp P           &kp B              &mmv MOVE_UP        &kp J        &kp L        &kp U        &kp Y         &kp SQT     &mo _SYSTEM 
+    &mo _SYSTEM &kp Q     &kp W           &kp F           &hlt _VIM P     &kp B              &mmv MOVE_UP        &kp J        &kp L        &kp U        &kp Y         &kp SQT     &mo _SYSTEM 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
     &kp LGUI     &hrml LCTRL A &hrml LSHIFT R &hrml LALT S    &hrml LCMD T    &hrml MEH G     &mmv MOVE_DOWN      &hrmr MEH M  &hrmr LCMD N &hrmr LALT E &hrmr LSHIFT I &hrmr LCTRL O &kp LCTRL 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &kp LALT    &kp Z     &kp X           &hlt _VIM C    &hlt _PREFIX_C_K D   &hktk HYPER V   &mmv MOVE_LEFT      &hktk HYPER K &kp H        &comm_uds    &dot_mns       &slh_bsl    &kp LSHIFT 
+    &kp LALT    &kp Z     &kp X           &kp C         &hlt _PREFIX_C_K D   &hktk HYPER V   &mmv MOVE_LEFT      &hktk HYPER K &kp H        &comm_uds    &dot_mns       &slh_bsl    &kp LSHIFT 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
                           &kp C_MUTE       &hlt _NAV ESC    &nslt _NUM ESC  &hlt _NAV SPACE  &mmv MOVE_RIGHT     &smart_shift &nslt _SYM TAB &hlt _EXTEND BSPC 
@@ -269,13 +272,13 @@ ZMK_TRI_STATE(sw_app_st,
 
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &mo _SYSTEM &kp Q     &kp W           &kp E           &kp R           &kp T             &mmv MOVE_UP        &kp Y        &kp U        &kp I        &kp O         &kp P         &mo _SYSTEM 
+    &mo _SYSTEM &kp Q     &kp W           &kp E           &hlt _VIM R      &kp T             &mmv MOVE_UP        &kp Y        &kp U        &kp I        &kp O         &kp P         &mo _SYSTEM 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
     &trans     &hrml LCTRL A &hrml LSHIFT S   &hrml LALT D &hrml LCMD F    &hrml MEH G       &mmv MOVE_DOWN      &hrmr MEH H  &hrmr LCMD J &hrmr LALT K &hrmr LSHIFT L &hrmr LCTRL SEMI &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans       &kp Z     &kp X           &hlt _VIM C   &hlt _PREFIX_C_K V &hktk HYPER B     &mmv MOVE_LEFT      &hktk HYPER N  &kp M        &comm_uds    &dot_mns       &slh_bsl    &trans 
+    &trans       &kp Z     &kp X           &kp C        &hlt _PREFIX_C_K V &hktk HYPER B     &mmv MOVE_LEFT      &hktk HYPER N  &kp M        &comm_uds    &dot_mns       &slh_bsl    &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
                           &kp C_MUTE       &hlt _NAV ESC    &nslt _NUM ESC  &hlt _NAV SPACE  &mmv MOVE_RIGHT     &smart_shift &nslt _SYM TAB &hlt _EXTEND BSPC 
@@ -771,13 +774,13 @@ ZMK_TRI_STATE(sw_app_st,
             bindings = <
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &none       &kp GRAVE     &kp LT           &kp GT           &kp QMARK  &up_dir           &mmv MOVE_UP        &kp PIPE      &kp LBRC    &kp PRCNT    &kp RBRC      &kp UNDER      &none
+    &none       &kp GRAVE     &kp LT           &kp GT           &kp QMARK  &kp HASH           &mmv MOVE_UP        &kp PIPE      &kp LBRC    &kp PRCNT    &kp RBRC      &kp UNDER      &none
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
-    &trans &hrml LCTRL EXCL &hrml LSHIFT MINUS &hrml LALT PLUS &hrml LCMD EQUAL &hrml MEH SEMI &mmv MOVE_DOWN  &hrmr MEH AMPS &hrmr LCMD LPAR &hrmr LALT COLON &hrmr LSHIFT RPAR &hrmr LCTRL BSLH &trans 
+    &trans &hrml LCTRL EXCL &hrml LSHIFT PLUS &hrml LALT MINUS &hrml LCMD EQUAL &hrml MEH SEMI &mmv MOVE_DOWN  &hrmr MEH AMPS &hrmr LCMD LPAR &hrmr LALT COLON &hrmr LSHIFT RPAR &hrmr LCTRL BSLH &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans       &kp KP_DOT &kp SLASH      &kp STAR        &kp CARET       &kp AT           &mmv MOVE_LEFT        &kp TILDE    &kp LBKT     &kp DLLR     &kp RBKT      &kp HASH      &trans 
+    &trans       &kp KP_DOT &kp SLASH      &kp STAR        &kp CARET       &kp AT           &mmv MOVE_LEFT        &kp TILDE    &kp LBKT     &kp DLLR     &kp RBKT      &up_dir      &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
                           &trans      &hml_ttl _NAV _SYM &hml_ttl _HRM _SYM &hlt _NAV SPACE &mmv MOVE_RIGHT      &smart_shift  &trans      &trans 
@@ -813,7 +816,7 @@ ZMK_TRI_STATE(sw_app_st,
     &trans     &tmux_p Z  &tmux_p X       &tmux_p C      &tmux_p D        &tmux_p V          &mmv MOVE_LEFT      &tmux_p K    &tmux_p H    &tmux_p COMMA &tmux_p DOT &tmux_p SLASH   &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
-                         &trans &hml_ttl _NAV _PREFIX_C_K &hml_ttl _HRM _PREFIX_C_K &trans   &mmv MOVE_RIGHT     &trans       &mo _HRM       &trans 
+                         &trans &hml_ttl _NAV _PREFIX_C_K &hml_ttl _HRM _PREFIX_C_K &tmux_p SPACE &mmv MOVE_RIGHT &mo _PRECAP_C_K &hml_ttp_tab _HRM  &trans 
 //                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
 //                                                                                           46
                                                                                              &mkp LCLK 
@@ -823,6 +826,32 @@ ZMK_TRI_STATE(sw_app_st,
             label = "prefix_c_k";
             sensor-bindings = <&scroll_encoder>;
         };
+
+        _precap_c_k_layer {
+            display-name = "precap_c_k";
+            bindings = <
+// ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
+// │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
+    &none       &tmux_pc Q &tmux_pc W    &tmux_pc F      &tmux_pc P      &tmux_pc B          &mmv MOVE_UP        &tmux_pc J  &tmux_pc L    &tmux_pc U   &tmux_pc Y    &tmux_pc SQT       &none
+// ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
+// │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
+    &trans     &tmux_pc A  &tmux_pc R    &tmux_pc S      &tmux_pc T      &tmux_pc G          &mmv MOVE_DOWN      &tmux_pc M  &tmux_pc N    &tmux_pc E    &tmux_pc I    &tmux_pc O        &trans 
+// ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
+// │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
+    &trans     &tmux_pc Z  &tmux_pc X    &tmux_pc C      &tmux_pc D      &tmux_pc V          &mmv MOVE_LEFT      &tmux_pc K  &tmux_pc H    &tmux_pc COMMA &tmux_pc DOT &tmux_pc SLASH   &trans 
+// ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
+//                                       │39             │40             │41             │   42                 │43          │44          │45          │
+                         &trans &hml_ttl _NAV _PRECAP_C_K &hml_ttl _HRM _PRECAP_C_K &tmux_p SPACE &mmv MOVE_RIGHT &trans &hml_ttpc_tab _HRM  &trans 
+//                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
+//                                                                                           46
+                                                                                             &mkp LCLK 
+//                                                                                          ╰───────────────╯
+
+            >;
+            label = "precap_c_k";
+            sensor-bindings = <&scroll_encoder>;
+        };
+
 
 // [_MOUSE] = LAYOUT_planck_grid(
 //     TO(_COLEMAK_DH), KC_MSTP, KC_WH_U, KC_WH_D,   KC_MUTE,    _______, _______,  KC_MPLY,    KC_WH_L,    KC_MS_U,   KC_WH_R,   CAP_IMG,
@@ -836,21 +865,22 @@ ZMK_TRI_STATE(sw_app_st,
             bindings = <
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &none  &to _COLEMAK_DH &kp C_STOP     &msc SCRL_DOWN  &msc SCRL_UP    &kp C_MUTE         &kp UP_ARROW        &kp C_PP     &msc SCRL_LEFT &mmv MOVE_UP &msc SCRL_RIGHT &kp CAP_IMG     &none
+    &none  &to _COLEMAK_DH &kp C_STOP     &mkp MP4       &mkp MP5         &kp C_MUTE         &kp UP_ARROW        &kp C_PP     &msc SCRL_LEFT &mmv MOVE_UP &msc SCRL_RIGHT &kp CAP_IMG     &none
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
-    &trans     &kp C_NEXT  &mo _MOUSE_NORM &mo _MOUSE_SLOW &mo _MOUSE_FAST &kp C_VOL_DN      &kp DOWN_ARROW    &kp C_VOL_UP  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp ZOOM_MAC    &trans 
+    &trans &hrml LCTRL C_NEXT &hrml LSHIFT C_VOL_DN &hrml LALT C_BRI_DN &hrml LCMD C_BRI_UP &hrml MEH C_VOL_UP &kp DOWN_ARROW &kp C_BRI_UP &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp ZOOM_MAC    &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans    &kp C_PREV     &kp C_PP       &mkp RCLK     &mkp LCLK        &kp C_BRI_DN      &kp LEFT_ARROW      &kp C_BRI_UP  &mkp LCLK    &mkp RCLK &mkp MCLK   &tog _MOUSE_REV      &trans 
+    &trans    &kp C_PREV     &kp C_PP       &mkp RCLK     &mkp LCLK       &kp C_VOL_DN        &kp LEFT_ARROW      &kp C_VOL_UP  &msc SCRL_DOWN &msc SCRL_UP &mkp RCLK &tog _MOUSE_REV      &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
-                            &trans &hml_ttl _NAV _MOUSE &hml_ttl _HRM _MOUSE &hlt _NAV SPACE &kp RIGHT_ARROW      &mkp MB5     &mkp MB4    &mkp MCLK
+                            &trans &hml_ttl _NAV _MOUSE &hml_ttl _HRM _MOUSE &hlt _NAV SPACE &kp RIGHT_ARROW      &mkp MCLK    &mkp LCLK    &mkp RCLK
 //                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
 //                                                                                           46
                                                                                              &kp ENTER
 //                                                                                          ╰───────────────╯
-
+/* &hrml LCTRL A &hrml LSHIFT R &hrml LALT S    &hrml LCMD T    &hrml MEH G */
+/* &kp C_NEXT  &mo _MOUSE_NORM &mo _MOUSE_SLOW &mo _MOUSE_FAST &kp C_BRI_DN */
             >;
 
             label = "mouse";
@@ -870,16 +900,16 @@ ZMK_TRI_STATE(sw_app_st,
             bindings = <
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &none     &kp CAP_IMG  &msc SCRL_LEFT   &mmv MOVE_UP   &msc SCRL_RIGHT &kp C_PP          &kp UP_ARROW       &kp C_MUTE   &msc SCRL_DOWN  &msc SCRL_UP &kp C_STOP &to _COLEMAK_DH &none
+    &none     &kp CAP_IMG  &msc SCRL_LEFT   &mmv MOVE_UP   &msc SCRL_RIGHT &kp C_PP          &kp UP_ARROW       &kp C_MUTE   &mkp MB5     &mkp MB4      &kp C_STOP &to _COLEMAK_DH &none
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
-    &trans    &kp ZOOM_MAC  &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp C_VOL_DN      &kp DOWN_ARROW     &kp C_VOL_UP  &mo _MOUSE_FAST &mo _MOUSE_SLOW &mo _MOUSE_NORM &kp C_PREV    &trans 
+    &trans    &kp ZOOM_MAC  &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp C_VOL_DN      &kp DOWN_ARROW     &hrmr MEH C_VOL_UP  &hrmr LCMD C_BRI_UP &hrmr LALT C_BRI_DN &hrmr LSHIFT C_VOL_DN &hrmr LCTRL C_PREV   &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans      &kp C_PP  &mkp MCLK       &mkp RCLK       &mkp LCLK        &kp C_BRI_DN      &kp LEFT_ARROW      &kp C_BRI_UP &mkp LCLK     &mkp RCLK    &kp C_NEXT &tog _MOUSE_REV &trans 
+    &trans      &kp C_PP  &mkp MCLK       &msc SCRL_UP  &msc SCRL_DOWN     &kp C_BRI_DN      &kp LEFT_ARROW      &kp C_BRI_UP &mkp LCLK     &mkp RCLK    &kp C_NEXT &tog _MOUSE_REV &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
-                          &trans          &m_thing _NAV 0 &m_thing _HRM 0 &hlt _NAV SPACE    &kp RIGHT_ARROW      &mkp MB5     &mkp MB4    &mkp MCLK 
+                          &trans          &m_thing _NAV 0 &m_thing _HRM 0 &hlt _NAV SPACE    &kp RIGHT_ARROW      &mkp MCLK    &mkp LCLK    &mkp RCLK 
 //                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
 //                                                                                           46
                                                                                              &kp ENTER
@@ -981,16 +1011,16 @@ ZMK_TRI_STATE(sw_app_st,
             bindings = <
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &none &htk LG(Q) CANCEL_MOD  &kp CLOSE_W  &mo _SUB_NAV    &sw_web       &sw_app          &mmv MOVE_UP        &htk CLR_TERM SW_INST &kp ENTER &kp TAB &web_tab      &kp CAP_IMG  &none
+    &none &htk LG(Q) CANCEL_MOD  &kp CLOSE_W  &mo _SUB_NAV    &sw_web       &sw_app          &mmv MOVE_UP        &web_tab &kp ENTER &kp TAB &htk CLR_TERM SW_INST      &kp CAP_IMG  &none
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
     &trans  &hrml LCTRL C_UNDO &hrml LSHIFT C_CUT &hrml_cy LALT C_COPY &hrml LCMD PASTE &hrml MEH SEARCH  &mmv MOVE_DOWN      &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT     &kp DWORD    &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans &tog _PREFIX_C_K &code_snip &hl_togl _LED _LED   &fat_right        &mo _VIM       &mmv MOVE_LEFT     &web_nav     &bkspc_del    &kp DEL_WORD  &htk WORD_L_SEL WORD_L &htk F_LINE_SEL F_LINE &trans 
+    &trans &tog _PREFIX_C_K &code_snip &hl_togl _LED _LED   &fat_right    &kp GRID_SHOW      &mmv MOVE_LEFT     &web_nav     &bkspc_del    &kp DEL_WORD  &htk WORD_L_SEL WORD_L &htk F_LINE_SEL F_LINE &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
-                          &trans          &trans          &trans          &trans             &mmv MOVE_RIGHT     &smart_shift &kp LS(TAB)     &trans 
+                          &trans          &trans          &tog _NAV       &trans             &mmv MOVE_RIGHT     &smart_shift &kp LS(TAB)     &trans 
 //                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
 //                                                                                           46
                                                                                              &mkp LCLK 
@@ -1032,16 +1062,16 @@ ZMK_TRI_STATE(sw_app_st,
             bindings = <
 // ╭───────────┬─────────┬───────────────┬───────────────┬───────────────┬───────────────╮  ╭───────────────╮   ╭────────────┬────────────┬────────────┬─────────────┬────────────┬───────────────╮
 // │0          │1        │2              │3              │4              │5              │  │6              │   │7           │8           │9           │10           │11          │12             │
-    &none       &none     &none           &none           &none           &none              &mmv MOVE_UP        &none        &kp ENTER    &mkp LCLK     &mkp RCLK    &none       &none
+    &none       &none     &none           &vim_save       &none           &none              &mmv MOVE_UP        &none        &kp ENTER    &mkp LCLK     &mkp RCLK    &none       &none
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │13         │14       │15             │16             │17             │18             │   19                 │20          │21          │22          │23           │24          │25             │
-    &trans       &none     &none           &vim_save      &none           &none              &mmv MOVE_DOWN      &kp LC(R)    &kp LC(D)  &kp LC(U)  &vim_swap      &none      &trans 
+    &trans       &none     &none           &none          &none           &none              &mmv MOVE_DOWN      &kp LC(R)    &kp LC(D)  &kp LC(U)  &vim_swap      &none      &trans 
 // ├───────────├─────────┼───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┼────────────┼───────────────┤
 // │26         │27       │28             │29             │30             │31             │   32                 │33          │34          │35          │36           │37          │38             │
-    &trans       &none     &none           &none           &trans          &none              &mmv MOVE_LEFT      &none       &kp LC(O)    &kp LC(N6)    &kp LC(I)    &none       &trans 
+    &trans       &none     &none           &none           &trans          &none              &mmv MOVE_LEFT     &msc SCRL_LEFT &kp LC(O)    &kp LC(N6)    &kp LC(I)    &none       &trans 
 // ╰───────────┴─────────┴───────────────┼───────────────┼───────────────┼───────────────┤  ├───────────────┤   ├────────────├────────────┼────────────┼─────────────┴────────────┴───────────────╯
 //                                       │39             │40             │41             │   42                 │43          │44          │45          │
-                           &trans         &trans          &trans          &trans             &mmv MOVE_RIGHT      &vim_save   &trans       &trans 
+                           &trans         &trans          &msc SCRL_UP &msc SCRL_DOWN        &mmv MOVE_RIGHT      &msc SCRL_RIGHT &vim_save  &trans 
 //                                       ╰───────────────┴───────────────┴───────────────╯  ├───────────────┤   ╰────────────┴────────────┴────────────╯
 //                                                                                           46
                                                                                              &mkp LCLK 

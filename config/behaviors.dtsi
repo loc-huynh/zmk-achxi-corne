@@ -299,6 +299,24 @@
         bindings = <&mo>, <&off_mouse>;
     };
 
+    /omit-if-no-ref/ hml_ttp_tab: hold_moment_layer_tap_tmux_prefix_tab {
+        compatible = "zmk,behavior-hold-tap";
+        // label = "HOLD_LAYER_TAP";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <150>;
+        bindings = <&mo>, <&tmux_p TAB>;
+    };
+
+    /omit-if-no-ref/ hml_ttpc_tab: hold_moment_layer_tap_tmux_cap_prefix_tab {
+        compatible = "zmk,behavior-hold-tap";
+        // label = "HOLD_LAYER_TAP";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <150>;
+        bindings = <&mo>, <&tmux_pc TAB>;
+    };
+
     /omit-if-no-ref/ htk: hold_tap_key {
         compatible = "zmk,behavior-hold-tap";
         // label = "HOLD_TAP_KEY";
